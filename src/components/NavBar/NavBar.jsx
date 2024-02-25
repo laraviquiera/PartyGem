@@ -1,6 +1,6 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
-import Dropdown from 'react-bootstrap/Dropdown';
+import {Navbar, Nav, NavDropdown, Container} from 'react-bootstrap'
 import './NavBar.css'
 
 export default function NavBar({ user, setUser }) {
@@ -12,29 +12,37 @@ export default function NavBar({ user, setUser }) {
   return (
     <>
     <span className='welcome'>Welcome, {user.name}!</span>
-    <nav>
-      <Link to="/about">ABOUT</Link>
-      &nbsp; | &nbsp;
-      <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-        SERVICES
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Dropdown.Item as={NavLink} to="Services/Catering">Catering</Dropdown.Item>
-        <Dropdown.Item as={NavLink} to="Services/Entertainment">Entertainment</Dropdown.Item>
-        <Dropdown.Item as={NavLink} to="Services/Venues">Venues & Event Spaces</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-      &nbsp; | &nbsp;
-      <Link to="/plan">YOUR EVENTS</Link>
-      &nbsp; | &nbsp;
-      <Link to="/plan/new">NEW PLAN</Link>
-      &nbsp; | &nbsp;
-      <Link to="/contact">CONTACT US</Link>
-      &nbsp; | &nbsp;
-      <Link to="" onClick={handleLogOut}>LOG OUT</Link>
-    </nav>
+    <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand as={NavLink} to="/">Party Gem</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={NavLink} to="/about">ABOUT</Nav.Link>
+            <NavDropdown title="SERVICES" id="basic-nav-dropdown">
+              <NavDropdown.Item as={NavLink} to="services/catering">Catering</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="services/entertainment">
+                Entertainment
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="services/venues">Venues & Event Spaces</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={NavLink} to="services/vendor">
+                Vendor Page
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="EVENT PLANNER" id="basic-nav-dropdown">
+              <NavDropdown.Item as={NavLink} to="plan">All events</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="plan/new">
+                Make a new event plan
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     </>
   );
 }
+
+
+
