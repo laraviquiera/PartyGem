@@ -21,8 +21,8 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/services" element={<ServicesPage />} />
-              <Route path="/plan" element={<PlanPage />} />
-              <Route path="/plan/new" element={<PlanForm />} />
+              <Route path="/plans" element={<PlanPage />} />
+              <Route path="/plans/new" element={<PlanForm />} />
             </Routes>
           </>
           :
