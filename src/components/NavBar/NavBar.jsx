@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
+import Dropdown from 'react-bootstrap/Dropdown';
 import './NavBar.css'
 
 export default function NavBar({ user, setUser }) {
@@ -14,7 +15,17 @@ export default function NavBar({ user, setUser }) {
     <nav>
       <Link to="/about">ABOUT</Link>
       &nbsp; | &nbsp;
-      <Link to="/services">SERVICES</Link>
+      <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+        SERVICES
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item as={NavLink} to="Services/Catering">Catering</Dropdown.Item>
+        <Dropdown.Item as={NavLink} to="Services/Entertainment">Entertainment</Dropdown.Item>
+        <Dropdown.Item as={NavLink} to="Services/Venues">Venues & Event Spaces</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
       &nbsp; | &nbsp;
       <Link to="/plan">YOUR EVENTS</Link>
       &nbsp; | &nbsp;

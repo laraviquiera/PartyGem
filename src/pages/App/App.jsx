@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthPage from '../AuthPage/AuthPage';
 import ServicesPage from '../ServicesPage/ServicesPage';
 import PlanPage from '../PlanPage/PlanPage';

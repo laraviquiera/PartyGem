@@ -1,9 +1,8 @@
 
 export default function VenuesList() {
+  return (
+    <div>VenuesList</div>
+  )
+}
 
-    return (
-      <>
-      <h1>Venues & Event Spaces</h1>
-      </>
-    );
-  }
+
