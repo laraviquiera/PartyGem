@@ -7,6 +7,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import CateringPage from '../CateringPage/CateringPage';
 import EntertainmentPage from '../EntertainmentPage/EntertainmentPage';
 import VenuesPage from '../VenuesPage/VenuesPage';
+import VendorPage from '../VendorPage/VendorPage';
 import PlanPage from '../PlanPage/PlanPage';
 import PlanForm from '../../components/PlanForm/PlanForm';
 import AboutPage from '../AboutPage/AboutPage';
@@ -25,6 +26,7 @@ export default function App() {
               <Route path="/services/catering" element={<CateringPage />} />
               <Route path="/services/entertainment" element={<EntertainmentPage />} />
               <Route path="/services/venues" element={<VenuesPage />} />
+              <Route path="/services/vendor" element={<VendorPage />} />
               <Route path="/plans" element={<PlanPage />} />
               <Route path="/plans/new" element={<PlanForm />} />
             </Routes>
