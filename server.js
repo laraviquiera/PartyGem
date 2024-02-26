@@ -26,9 +26,9 @@ const port = process.env.PORT || 3001;
 app.use('/api/users', require('./routes/api/users'));
 
 // Protect all routes below from anonymous users
-const ensureLoggedIn = require('./config/ensureLoggedIn');
-app.use('/api/plans', ensureLoggedIn, require('./routes/api/plans'));
-app.use('/api/services', ensureLoggedIn, require('./routes/api/services'));
+// const ensureLoggedIn = require('./config/ensureLoggedIn');
+// app.use('/api/plans', ensureLoggedIn, require('./routes/api/plans'));
+// app.use('/api/services', ensureLoggedIn, require('./routes/api/services'));
 
 
 // The following "catch all" route (note the *) is necessary

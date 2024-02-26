@@ -4,12 +4,14 @@ const plansCtrl = require('../../controllers/api/plans');
 
 //All paths start with /plans
 
-//GET /plans 
-
-//GET /plans/:id
-
-//GET /plans/new - new form
+//GET /plans/new - view new event plan form
 
 //POST /plans - create a new plan
+
+//GET /plans - view all events
+
+//GET /plans/:id - view event detail
+
+
 
 

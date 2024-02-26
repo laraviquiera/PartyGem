@@ -1,6 +1,6 @@
 
 export default function PlanDetails() {
   return (
-    <div>Plan Details</div>
+    <div>Plan Details Section</div>
   )
 }

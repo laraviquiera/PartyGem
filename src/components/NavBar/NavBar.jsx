@@ -39,10 +39,9 @@ export default function NavBar({ user, setUser }) {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <NavDropdown.Item as={NavLink} to="" onClick={handleLogOut}>LOG OUT</NavDropdown.Item>
     </Navbar>
     </>
   );
 }
-
-
 

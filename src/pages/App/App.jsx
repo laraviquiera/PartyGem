@@ -4,7 +4,9 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthPage from '../AuthPage/AuthPage';
-import ServicesPage from '../ServicesPage/ServicesPage';
+import CateringPage from '../CateringPage/CateringPage';
+import EntertainmentPage from '../EntertainmentPage/EntertainmentPage';
+import VenuesPage from '../VenuesPage/VenuesPage';
 import PlanPage from '../PlanPage/PlanPage';
 import PlanForm from '../../components/PlanForm/PlanForm';
 import AboutPage from '../AboutPage/AboutPage';
@@ -20,7 +22,9 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
-              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/services/catering" element={<CateringPage />} />
+              <Route path="/services/entertainment" element={<EntertainmentPage />} />
+              <Route path="/services/venues" element={<VenuesPage />} />
               <Route path="/plans" element={<PlanPage />} />
               <Route path="/plans/new" element={<PlanForm />} />
             </Routes>
