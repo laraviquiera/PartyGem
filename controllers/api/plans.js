@@ -1,13 +1,18 @@
 const Plan = require('../../models/plan');
 
 module.exports = {
-    newPlan,
+    new: newPlan,
     create
 };
 
 async function create(req, res) {
-    const plans = await Plan.find({ user: req.user._id})
-    res.json(plans);
+  try {
+      const plans = await Plan.find({ user: req.user._id }, 'eventName');
+      res.json(plans);
+  } catch (err) {
+      console.log(err);
+      res.json({ error: 'An error occurred' });
+  }
 }
 
 async function newPlan(req, res) {
