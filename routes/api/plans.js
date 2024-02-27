@@ -5,11 +5,12 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 //All paths start with /plans
 
-//GET /plans/new - view new event plan form
-router.get('/new', ensureLoggedIn, plansCtrl.new )
+//GET /plans - view all list of plans
+router.get('/', ensureLoggedIn, plansCtrl.index)
 
-//POST /plans - create a new plan
-router.post('/', ensureLoggedIn, plansCtrl.create)
+//POST /plans/new - create a new plan
+router.post('/new', ensureLoggedIn, plansCtrl.create )
+
 
 //GET /plans - view all plans
 

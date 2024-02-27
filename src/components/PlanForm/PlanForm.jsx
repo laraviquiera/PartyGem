@@ -1,4 +1,5 @@
 import * as plansAPI from '../../utilities/plans-api';
+import AutocompleteInput from '../AutocompleteInput/AutocompleteInput';
 import { useState } from 'react'
 
 export default function PlanForm() {
@@ -29,17 +30,17 @@ export default function PlanForm() {
   }
 
   return (
-    <div>
+    <>
       <div className="form-container">
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Event Name</label>
+          <label>Event Name:</label>
           <input type="text" name="eventName" value={formData.eventName} onChange={handleChange} required />
-          <label>Date</label>
+          <label>Date:</label>
           <input type="date" name="date" value={formData.date} onChange={handleChange} required />
-          <label>Time</label>
-          <input type="text" name="time" value={formData.time} onChange={handleChange} required />
+          <label>Time:</label>
+          <input type="time" name="time" value={formData.time} onChange={handleChange} required />
           <label>Location</label>
-          <input type="text" name="location" value={formData.location} onChange={handleChange} required />
+          <AutocompleteInput type="text" name="location" value={formData.location} onChange={handleChange} required />
           <label>Number of Guests</label>
           <input type="number" name="numberOfGuests" value={formData.numberOfGuests} onChange={handleChange} required />
           <label>Budget</label>
@@ -54,6 +55,6 @@ export default function PlanForm() {
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>
-    </div>
+    </>
   );
 }
