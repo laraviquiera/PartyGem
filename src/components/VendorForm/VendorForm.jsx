@@ -164,21 +164,21 @@ export default function VendorForm() {
               <option value="">Select Cuisine Type</option>
               <option value="American">American</option>
               <option value="African">African</option>
-              <option value="Asian Fusion">African</option>
-              <option value="Chinese">African</option>
-              <option value="French">African</option>
-              <option value="Indian">African</option>
-              <option value="Italian">African</option>
-              <option value="Japanese">African</option>
-              <option value="Korean">African</option>
-              <option value="Mediterranean">African</option>
-              <option value="Mexican">African</option>
-              <option value="Middle Eastern">African</option>
-              <option value="Southern">African</option>
-              <option value="Taiwanese">African</option>
-              <option value="Thai">African</option>
-              <option value="Vietnamese">African</option>
-              <option value="Others">African</option>
+              <option value="Asian Fusion">Asian Fusion</option>
+              <option value="Chinese">Chinese</option>
+              <option value="French">French</option>
+              <option value="Indian">Indian</option>
+              <option value="Italian">Italian</option>
+              <option value="Japanese">Japanese</option>
+              <option value="Korean">Korean</option>
+              <option value="Mediterranean">Mediterranean</option>
+              <option value="Mexican">Mexican</option>
+              <option value="Middle Eastern">Middle Eastern</option>
+              <option value="Southern">Southern</option>
+              <option value="Taiwanese">Taiwanese</option>
+              <option value="Thai">Thai</option>
+              <option value="Vietnamese">Vietnamese</option>
+              <option value="Others">Others</option>
             </select>
           </label>
         </>
@@ -195,10 +195,11 @@ export default function VendorForm() {
             >
               <option value="">Select Entertainment Type</option>
               <option value="Clowns & Magicians">Clowns & Magicians</option>
-              <option value="Clowns & Magicians">Clowns & Magicians</option>
-              <option value="Clowns & Magicians">Clowns & Magicians</option>
-              <option value="Clowns & Magicians">Clowns & Magicians</option>
-              <option value="Clowns & Magicians">Clowns & Magicians</option>
+              <option value="Dancers">Dancers</option>
+              <option value="Face Painting">Face Painting</option>
+              <option value="Live Bands & DJs">Live Bands & DJs</option>
+              <option value="Mascots & Princess Characters">Mascots & Princess Characters</option>
+              <option value="Photo Booths">Photo Booths</option>
     
             </select>
           </label>
