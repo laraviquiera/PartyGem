@@ -1,4 +1,4 @@
-import * as plansAPI from '../../utilities/plans-api';
+// import * as plansAPI from '../../utilities/plans-api';
 import { useState } from 'react'
 
 export default function PlanForm() {
@@ -19,14 +19,22 @@ export default function PlanForm() {
     setFormData({...formData, [evt.target.name]: evt.target.value });
     setError('');
   }
+
   async function handleSubmit(evt) {
     evt.preventDefault();
     try {
-      await plansAPI.createPlan(formData);
+      await fetch('/api/plans/new', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
     } catch {
       setError('Failed to create plan');
     }
   }
+  
 
   return (
     <>

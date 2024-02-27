@@ -2,12 +2,18 @@ const Plan = require('../../models/plan');
 
 module.exports = {
     index,
-    create
+    create,
+    show
 };
+
+async function show (req, res) {
+    const plan = await Plan.findById(req.params.id);
+    res.json(plan);
+}
 
 async function index(req, res) {
     const plans = await Plan.find({user: req.user._id});
-    res.json(notes);
+    res.json(plans);
 };
 
 async function create(req, res) {

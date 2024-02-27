@@ -6,5 +6,5 @@ export async function createPlan(formData) {
 };
 
 export async function getPlans() {
-    return sendRequest(BASE_URL, 'GET');
+    return sendRequest(BASE_URL);
   };

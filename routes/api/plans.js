@@ -9,12 +9,10 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 router.get('/', ensureLoggedIn, plansCtrl.index)
 
 //POST /plans/new - create a new plan
-router.post('/new', ensureLoggedIn, plansCtrl.create )
-
-
-//GET /plans - view all plans
+router.post('/', ensureLoggedIn, plansCtrl.create)
 
 //GET /plans/:id - view event detail
+router.get('/:id', ensureLoggedIn, plansCtrl.show)
 
 module.exports = router;
 
