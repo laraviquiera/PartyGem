@@ -1,5 +1,4 @@
 import * as plansAPI from '../../utilities/plans-api';
-import AutocompleteInput from '../AutocompleteInput/AutocompleteInput';
 import { useState } from 'react'
 
 export default function PlanForm() {
@@ -40,7 +39,7 @@ export default function PlanForm() {
           <label>Time:</label>
           <input type="time" name="time" value={formData.time} onChange={handleChange} required />
           <label>Location</label>
-          <AutocompleteInput type="text" name="location" value={formData.location} onChange={handleChange} required />
+          <input type="text" name="location" value={formData.location} onChange={handleChange} required />
           <label>Number of Guests</label>
           <input type="number" name="numberOfGuests" value={formData.numberOfGuests} onChange={handleChange} required />
           <label>Budget</label>
