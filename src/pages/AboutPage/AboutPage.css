@@ -1,15 +1,28 @@
 .hero-img {
-display: flex;
+display: relative;
 justify-content: flex-end;
 align-items: center;
 background-image: url('https://i.imgur.com/7TVmWir.png');
-width: 1415px;
-height: 300px;
+width: 1410px;
+height: 400px;
 background-size: cover;
 background-position: center;
 }
 
+.left-img {
+background-image: url('https://i.imgur.com/uiXQcQv.png');
+width: 600px;
+height: 400px;
+background-size: cover;
+background-position: center;
+margin-top: 40px;
+}
+
 .about-title {
+position: absolute;
+top: 50%;
+right: 50px;
+transform: translateY(-50%);
 background-color: rgba(239, 235, 232, 0.8);
 font-family: "EB Garamond", serif;
 padding: 3rem;
@@ -17,10 +30,16 @@ color: #737373;
 }
 
 .about-paragraph {
-display: flex;
-justify-content: flex-end;
-align-items: center;
+position: absolute;
+font-size: 20px;
+font-weight: 800;
+bottom: 0;
+right: 200px;
+transform: translateY(50%);
 font-family: "EB Garamond", serif;
+padding: 3rem;
+color: #737373;
+text-align: center;
 }
 
 .second-paragraph {
@@ -28,8 +47,4 @@ display: flex;
 justify-content: flex-end;
 align-items: center;
 font-family: "EB Garamond", serif;
-}
-
-.left-img {
-
 }
