@@ -19,12 +19,7 @@ const planSchema = new Schema ({
         required: true
     },
     location: {
-        type: {
-            address: String,
-            city: String,
-            state: String,
-            country: String
-        },
+        type: String,
         required: true
     },
     numberOfGuests: {

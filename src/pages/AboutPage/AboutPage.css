@@ -30,21 +30,19 @@ color: #737373;
 }
 
 .about-paragraph {
-position: absolute;
-font-size: 20px;
-font-weight: 800;
-bottom: 0;
-right: 200px;
-transform: translateY(50%);
-font-family: "EB Garamond", serif;
-padding: 3rem;
-color: #737373;
-text-align: center;
+position: fixed;
+top: 80%;
+right: 40px;
+transform: translateY(-50%);
+width: 800px; 
+padding: 20px;
 }
 
 .second-paragraph {
-display: flex;
-justify-content: flex-end;
-align-items: center;
-font-family: "EB Garamond", serif;
+position: fixed;
+top: 80%;
+right: 40px;
+transform: translateY(-50%);
+width: 800px; 
+padding: 20px;
 }

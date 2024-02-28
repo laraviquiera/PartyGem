@@ -33,8 +33,10 @@ async function create(req, res) {
             notes
         });
         await newPlan.save();
+        console.log(newPlan)
         res.json(newPlan);
     } catch (err) {
+        console.log(err)
         res.json({ message: err.message });
     }
 }

@@ -19,6 +19,7 @@ export default function NavBar({ user, setUser }) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to="/about">ABOUT</Nav.Link>
+            <Nav.Link as={NavLink} to="/plans">EVENT PLAN</Nav.Link>
             <NavDropdown title="SERVICES" id="basic-nav-dropdown">
               <NavDropdown.Item as={NavLink} to="services/catering">Catering</NavDropdown.Item>
               <NavDropdown.Item as={NavLink} to="services/entertainment">Entertainment</NavDropdown.Item>
@@ -27,10 +28,6 @@ export default function NavBar({ user, setUser }) {
               <NavDropdown.Item as={NavLink} to="services/vendor">
                 Vendor Page
               </NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="EVENT PLANNER" id="basic-nav-dropdown">
-              <NavDropdown.Item as={NavLink} to="/plans">All Plans</NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="plans/new">Create a new plan</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

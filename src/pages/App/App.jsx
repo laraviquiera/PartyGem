@@ -9,7 +9,6 @@ import EntertainmentPage from '../EntertainmentPage/EntertainmentPage';
 import VenuesPage from '../VenuesPage/VenuesPage';
 import VendorPage from '../VendorPage/VendorPage';
 import PlanPage from '../PlanPage/PlanPage';
-import PlanForm from '../../components/PlanForm/PlanForm';
 import AboutPage from '../AboutPage/AboutPage';
 import NavBar from '../../components/NavBar/NavBar';
 
@@ -28,7 +27,6 @@ export default function App() {
               <Route path="/services/venues" element={<VenuesPage />} />
               <Route path="/services/vendor" element={<VendorPage />} />
               <Route path="/plans" element={<PlanPage />} />
-              <Route path="/plans/new" element={<PlanForm />} />
             </Routes>
           </>
           :

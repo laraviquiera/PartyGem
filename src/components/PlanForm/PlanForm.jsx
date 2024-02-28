@@ -1,7 +1,7 @@
-// import * as plansAPI from '../../utilities/plans-api';
+import * as plansAPI from '../../utilities/plans-api';
 import { useState } from 'react'
 
-export default function PlanForm() {
+export default function PlanForm({setForm}) {
   const [formData, setFormData] = useState({
     eventName: '',
     date: '',
@@ -15,6 +15,8 @@ export default function PlanForm() {
   });
   const [error, setError] = useState('');
 
+  
+
   function handleChange(evt) {
     setFormData({...formData, [evt.target.name]: evt.target.value });
     setError('');
@@ -23,13 +25,8 @@ export default function PlanForm() {
   async function handleSubmit(evt) {
     evt.preventDefault();
     try {
-      await fetch('/api/plans/new', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await plansAPI.createPlan(formData);
+      console.log(response)
     } catch {
       setError('Failed to create plan');
     }
@@ -58,7 +55,10 @@ export default function PlanForm() {
           <input type="text" name="invitationLink" value={formData.invitationLink} onChange={handleChange} />
           <label>Notes</label>
           <textarea name="notes" value={formData.notes} onChange={handleChange}></textarea>
+          <div>
           <button type="submit">Submit</button>
+          <button onClick={()=> setForm(false)}>Cancel</button>
+          </div>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>

@@ -8,8 +8,9 @@ export default function AboutPage() {
       <h1 className="about-title">Discover hidden gems for your perfect party!</h1>
       </div>
       <div className="left-img"></div>
-      <p className="about-paragraph"> Throwing a party but don’t know where to start? Planning a party but feeling overwhelmed? </p>
-      <p className="second-paragraph"> Say goodbye to party-planning stress with our all-in-one event planner app!
+      <p className="about-paragraph"> <strong>Throwing a party but don’t know where to start? Planning a party but feeling overwhelmed?</strong>
+      
+      Say goodbye to party-planning stress with our all-in-one event planner app!
         Whether you're throwing a birthday bash, a wedding celebration, or a casual get-together,
         our app has got you covered.Say hello to stress-free party planning and hello to a memorable event!</p>
       </>
