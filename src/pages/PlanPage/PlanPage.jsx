@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as plansAPI from '../../utilities/plans-api';
 import PlanForm from '../../components/PlanForm/PlanForm';
+import PlanDetails from '../../components/PlanDetails/PlanDetails';
 import './PlanPage.css'
 
 export default function PlanPage() {
@@ -55,15 +56,7 @@ export default function PlanPage() {
           </div>
           {selectedPlan && (
             <div className="selected-plan">
-              <h2>{selectedPlan.eventName}</h2>
-              <p>Date: {formatDate(selectedPlan.date)} </p>
-              <p>Time: {formatTime(selectedPlan.time)}</p>
-              <p>Location: {selectedPlan.location}</p>
-              <p>Number of Guests: {selectedPlan.numberOfGuests}</p>
-              <p>Budget: {selectedPlan.budget}</p>
-              <p>Services: {selectedPlan.services.join(', ')}</p>
-              <p>Invitation Link: <a href={selectedPlan.invitationLink}>{selectedPlan.invitationLink}</a></p>
-              <p>Notes: {selectedPlan.notes}</p>
+              <PlanDetails plan={selectedPlan}/ >
             </div>
           )}
         </>
