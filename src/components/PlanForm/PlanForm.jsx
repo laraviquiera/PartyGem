@@ -1,5 +1,6 @@
 import * as plansAPI from '../../utilities/plans-api';
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export default function PlanForm({setForm}) {
   const [formData, setFormData] = useState({
@@ -26,7 +27,6 @@ export default function PlanForm({setForm}) {
     evt.preventDefault();
     try {
       const response = await plansAPI.createPlan(formData);
-      console.log(response)
     } catch {
       setError('Failed to create plan');
     }
@@ -56,7 +56,7 @@ export default function PlanForm({setForm}) {
           <label>Notes</label>
           <textarea name="notes" value={formData.notes} onChange={handleChange}></textarea>
           <div>
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={()=> setForm(true)} Link to="/plans">Submit</button>
           <button onClick={()=> setForm(false)}>Cancel</button>
           </div>
         </form>
