@@ -11,7 +11,7 @@
 
 .form-container {
     display: flex;
-    display: inline-block;
+    flex-direction: column;
     align-content: center;
     align-items: center;
     text-align: center;
@@ -25,30 +25,18 @@
     align-content: center;
 }
 
-.submit-btn {
-    background-color: #d3bcad;
-    color: white;
-    border-radius: 5px;
-}
 
-.submit-btn:hover {
-    background-color: #87817a;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-
-
+.submit-btn,
 .cancel-btn {
     background-color: #d3bcad;
     color: white;
     border-radius: 5px;
+    margin: 0.5em 0;
+    padding: 0.5em 1em;
 }
 
+.submit-btn:hover,
 .cancel-btn:hover {
     background-color: #87817a;
-    color: white;
     cursor: pointer;
-    border-radius: 5px;
 }

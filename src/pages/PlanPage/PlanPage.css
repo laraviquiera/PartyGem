@@ -1,9 +1,15 @@
+.plan-page-title {
+    font-family: "EB Garamond", serif;
+    color: #737373;
+}
+
 .plan-bg {
     display: flex;
     background-image: url('https://i.imgur.com/xsSI8AO.png');
     background-position: cover;
     background-repeat: no-repeat;
-    margin-top: 2rem;
+    align-items: center;
+    margin-top: 1.5rem;
     font-family: "EB Garamond", serif;
 }
 
@@ -13,13 +19,26 @@
     flex-direction: column;
     align-items: center;
     padding: 3em;
-    margin: 5em 4em;
-    overflow: auto;
+    margin: 5em 2em;
+    height: 40rem;
     background-color: RGBA(239, 237, 241, 0.9);
     border-radius: 30px;
     border: solid 1px #545454;
     text-align: left;
     font-family: "EB Garamond", serif;
+}
+
+.list {
+    overflow: auto;
+    padding: 1em;
+    margin: 1em 5em;
+    width: 20rem;
+}
+
+.event-list a {
+    color: #737373;
+    font-size: 20px;
+    overflow-y: auto;
 }
 
 .selected-plan {
@@ -34,6 +53,6 @@
     justify-content: center;
     padding: 3rem;
     margin: 10rem;
-    overflow: auto;
+    overflow-y: auto;
     font-family: "EB Garamond", serif;
 }

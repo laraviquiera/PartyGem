@@ -34,8 +34,9 @@ export default function PlanPage() {
       ) : (
         <>
         <div className="event-list">
-          <h1>Your Event List</h1>
+          <h1 className="plan-page-title">Your Event List</h1>
           <button onClick={() => setForm(true)}>Make a new event</button>
+          <div className="list">
           {plans.map((plan) => (
             <div key={plan._id}>
               <Link to="#" onClick={() => handlePlanClick(plan)}>
@@ -43,6 +44,7 @@ export default function PlanPage() {
               </Link>
             </div>
           ))}
+          </div>
           </div>
           {selectedPlan && (
             <div className="selected-plan">

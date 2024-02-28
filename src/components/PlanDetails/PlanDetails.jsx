@@ -1,3 +1,5 @@
+import './PlanDetails.css'
+
 export default function PlanDetails({ plan }) {
   const formatDate = (date) => {
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
@@ -11,16 +13,16 @@ export default function PlanDetails({ plan }) {
 
 
   return (
-    <div>
+    <div className="plan-details">
       <h2>{plan.eventName}</h2>
-      <p>Date: {formatDate(plan.date)} </p>
-      <p>Time: {formatTime(plan.time)}</p>
-      <p>Location: {plan.location}</p>
-      <p>Number of Guests: {plan.numberOfGuests}</p>
-      <p>Budget: {plan.budget}</p>
-      <p>Services: {plan.services.join(', ')}</p>
-      <p>Invitation: <a href={plan.invitationLink} target="_blank" >{plan.invitationLink ? 'Link' : ''}</a></p>
-      <p>Notes: {plan.notes}</p>
+      <p><strong>Date:</strong> {formatDate(plan.date)} </p>
+      <p><strong>Time:</strong> {formatTime(plan.time)}</p>
+      <p><strong>Location:</strong> {plan.location}</p>
+      <p><strong>Number of Guests:</strong> {plan.numberOfGuests}</p>
+      <p><strong>Budget:</strong> {plan.budget}</p>
+      <p><strong>Services:</strong> {plan.services.join(', ')}</p>
+      <p><strong>Invitation:</strong> <a href={plan.invitationLink} target="_blank" >{plan.invitationLink ? 'Link' : ''}</a></p>
+      <p><strong>Notes:</strong> {plan.notes}</p>
     </div>
   );
 }
