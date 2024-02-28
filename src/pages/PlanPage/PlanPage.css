@@ -1,16 +1,21 @@
 .plan-bg {
     display: flex;
     background-image: url('https://i.imgur.com/xsSI8AO.png');
-    margin-top: 4rem;
+    background-position: cover;
+    background-repeat: no-repeat;
+    margin-top: 2rem;
     font-family: "EB Garamond", serif;
 }
 
 .event-list {
-    margin-top: 4rem;
+    display: flex;
     flex: 0 0 30rem;
-    margin-right: 1rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em;
+    margin: 5em 4em;
     overflow: auto;
-    background-color: RGBA(239, 237, 241, 0.8);
+    background-color: RGBA(239, 237, 241, 0.9);
     border-radius: 30px;
     border: solid 1px #545454;
     text-align: left;
@@ -18,16 +23,17 @@
 }
 
 .selected-plan {
-    flex: 1;
-    width: 2em;
-    background-color: RGBA(239, 237, 241, 0.8);
+    display: flex;
+    flex: 0 0 30rem;
+    flex-direction: column;
+    background-color: RGBA(239, 237, 241, 0.9);
     border-radius: 30px;
     border: solid 1px #545454;
     text-align: left;
     align-items: center;
     justify-content: center;
     padding: 3rem;
-    margin-top: 4rem;
+    margin: 10rem;
     overflow: auto;
     font-family: "EB Garamond", serif;
 }

@@ -1,4 +1,54 @@
-.form-heading {
+.form-heading > h1 {
+    display: flex;
     font-family: "EB Garamond", serif;
+    text-align: center;
+}
+
+.form-heading {
     color: #737373;
+    margin: 1rem;
+}
+
+.form-container {
+    display: flex;
+    display: inline-block;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 3em auto;
+    background-color: RGBA(239, 237, 241, 0.95);
+}
+
+.form-container label {
+    color: #4e4c4c;
+    text-align: center;
+    align-content: center;
+}
+
+.submit-btn {
+    background-color: #d3bcad;
+    color: white;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: #87817a;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+
+.cancel-btn {
+    background-color: #d3bcad;
+    color: white;
+    border-radius: 5px;
+}
+
+.cancel-btn:hover {
+    background-color: #87817a;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
 }

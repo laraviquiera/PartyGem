@@ -40,26 +40,26 @@ export default function PlanForm({setForm}) {
         <h1 className="form-heading">PLAN YOUR EVENT</h1>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <label>Event Name:</label>
-          <input type="text" name="eventName" value={formData.eventName} onChange={handleChange} required />
+          <input type="text" name="eventName" placeholder="e.g. Henry's 3rd Birthday" value={formData.eventName} onChange={handleChange} required />
           <label>Date:</label>
           <input type="date" name="date" value={formData.date} onChange={handleChange} required />
           <label>Time:</label>
           <input type="time" name="time" value={formData.time} onChange={handleChange} required />
-          <label>Location</label>
+          <label>Location:</label>
           <input type="text" name="location" value={formData.location} onChange={handleChange} required />
-          <label>Number of Guests</label>
+          <label>Number of Guests:</label>
           <input type="number" name="numberOfGuests" value={formData.numberOfGuests} onChange={handleChange} required />
-          <label>Budget</label>
+          <label>Budget:</label>
           <input type="number" name="budget" value={formData.budget} onChange={handleChange} required />
-          <label>Services</label>
-          <input type="text" name="services" value={formData.services} onChange={handleChange} />
-          <label>Invitation Link</label>
+          <label>Services:</label>
+          <input type="text" name="services" placeholder="e.g. Kitchen Woori Catering, SF Balloons, etc." value={formData.services} onChange={handleChange} />
+          <label>Invitation Link:</label>
           <input type="text" name="invitationLink" value={formData.invitationLink} onChange={handleChange} />
-          <label>Notes</label>
+          <label>Notes:</label>
           <textarea name="notes" value={formData.notes} onChange={handleChange}></textarea>
           <div>
-          <button type="submit" onClick={()=> setForm(true)} Link to="/plans">Submit</button>
-          <button onClick={()=> setForm(false)}>Cancel</button>
+          <button type="submit" onClick={()=> setForm(true)} Link to="/plans" className="submit-btn">Submit</button>&nbsp;
+          <button onClick={()=> setForm(false)} className="cancel-btn">Cancel</button>
           </div>
         </form>
       </div>
