@@ -11,8 +11,13 @@ router.get('/', ensureLoggedIn, plansCtrl.index)
 //POST /plans - create a new plan
 router.post('/', ensureLoggedIn, plansCtrl.create)
 
-//GET /plans/:id - view event detail
-router.get('/:id', ensureLoggedIn, plansCtrl.show)
+//DELETE /plans/:id - delete
+router.delete('/:id', ensureLoggedIn, plansCtrl.delete)
+
+//PUT /plans/:id - update
+
+
+
 
 module.exports = router;
 

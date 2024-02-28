@@ -3,13 +3,16 @@ const Plan = require('../../models/plan');
 module.exports = {
     index,
     create,
-    show
+    delete: deletePlan
 };
 
-async function show (req, res) {
-    const plan = await Plan.findById(req.params.id);
-    res.json(plan);
-}
+
+async function deletePlan(req, res) {
+    await Plan.findOneAndDelete(
+      {_id: req.params.id, user: req.user._id}
+    );
+    res.json(plans);
+  }
 
 async function index(req, res) {
     const plans = await Plan.find({user: req.user._id});

@@ -6,5 +6,13 @@ export async function createPlan(formData) {
 };
 
 export async function getPlans() {
-    return sendRequest(BASE_URL);
-  };
+  return sendRequest(BASE_URL);
+};
+
+export async function updatePlan(id, formData) {
+  return sendRequest(`${BASE_URL}/${id}`, 'PUT', formData);
+};
+  
+export async function deletePlan(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+};

@@ -48,7 +48,7 @@ export default function PlanPage() {
           </div>
           {selectedPlan && (
             <div className="selected-plan">
-              <PlanDetails plan={selectedPlan}/ >
+              <PlanDetails plan={selectedPlan} />
             </div>
           )}
         </>
