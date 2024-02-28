@@ -1,6 +1,7 @@
 import * as plansAPI from '../../utilities/plans-api';
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
+import './PlanForm.css'
 
 export default function PlanForm({setForm}) {
   const [formData, setFormData] = useState({
@@ -36,6 +37,7 @@ export default function PlanForm({setForm}) {
   return (
     <>
       <div className="form-container">
+        <h1 className="form-heading">PLAN YOUR EVENT</h1>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <label>Event Name:</label>
           <input type="text" name="eventName" value={formData.eventName} onChange={handleChange} required />

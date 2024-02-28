@@ -19,7 +19,7 @@ export default function PlanDetails({ plan }) {
       <p>Number of Guests: {plan.numberOfGuests}</p>
       <p>Budget: {plan.budget}</p>
       <p>Services: {plan.services.join(', ')}</p>
-      <p>Invitation Link: <a href={plan.invitationLink}> {plan.invitationLink}</a></p>
+      <p>Invitation: <a href={plan.invitationLink} target="_blank" >{plan.invitationLink ? 'Link' : ''}</a></p>
       <p>Notes: {plan.notes}</p>
     </div>
   );
