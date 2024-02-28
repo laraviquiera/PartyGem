@@ -10,6 +10,19 @@ export default function PlanPage() {
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [form, setForm] = useState(false);
   const [error, setError] = useState('');
+  const [formData, setFormData] = useState({
+    eventName: '',
+    date: '',
+    time: '',
+    location: '',
+    numberOfGuests: '',
+    budget: '',
+    services: '',
+    invitationLink: '',
+    notes: ''
+  });
+
+  
 
   useEffect(() => {
     const fetchPlans = async () => {
@@ -26,6 +39,32 @@ export default function PlanPage() {
   const handlePlanClick = (plan) => {
     setSelectedPlan(plan);
   };
+
+  const handleDeletePlan = async (id) => {
+    try {
+      await plansAPI.deletePlan(id);
+      setPlans((prevPlans) => prevPlans.filter((plan) => plan._id !== id));
+      setSelectedPlan(null);
+    } catch (error) {
+      setError('Failed to delete plan');
+    }
+  };
+
+  const handleUpdatePlan = async (id, updatedData) => {
+    try {
+      await plansAPI.updatePlan(id, updatedData);
+      const updatedPlans = await plansAPI.getPlans();
+      setPlans(updatedPlans);
+      setSelectedPlan(null);
+    } catch (error) {
+      setError('Failed to update plan');
+    }
+  };
+  
+  const updateFormData = (data) => {
+    setFormData(data);
+  };
+
 
   return (
     <div className="plan-bg">
@@ -48,7 +87,14 @@ export default function PlanPage() {
           </div>
           {selectedPlan && (
             <div className="selected-plan">
-              <PlanDetails plan={selectedPlan} />
+              <PlanDetails
+              plan={selectedPlan}
+              onDeletePlan={handleDeletePlan} 
+              onUpdatePlan={handleUpdatePlan}
+              formData={formData}
+              updateFormData={updateFormData}
+              setFormData={setFormData}
+              />
             </div>
           )}
         </>

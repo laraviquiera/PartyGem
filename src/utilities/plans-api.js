@@ -9,6 +9,10 @@ export async function getPlans() {
   return sendRequest(BASE_URL);
 };
 
+export async function getPlan(id) {
+  return sendRequest(`${BASE_URL}/${id}`);
+};
+
 export async function updatePlan(id, formData) {
   return sendRequest(`${BASE_URL}/${id}`, 'PUT', formData);
 };
