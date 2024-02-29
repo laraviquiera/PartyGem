@@ -31,11 +31,12 @@ export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, updateFo
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
     return new Date(date).toLocaleDateString('en-US', options);
   };
-
+  
   const formatTime = (time) => {
     const options = { hour: 'numeric', minute: 'numeric', hour12: true };
-    return new Date(`1970-01-01T${time}:00.000Z`).toLocaleString('en-US', options);
+    return new Date(`2022-01-01T${time}`).toLocaleString('en-US', options);
   };
+
 
   return (
     <div className="plan-details">

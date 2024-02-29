@@ -16,7 +16,6 @@ export default function PlanForm({setForm}) {
   });
   const [error, setError] = useState('');
 
-  
 
   function handleChange(evt) {
     setFormData({...formData, [evt.target.name]: evt.target.value });
@@ -37,7 +36,7 @@ export default function PlanForm({setForm}) {
     <>
       <div className="form-container">
         <h1 className="form-heading">PLAN YOUR EVENT</h1>
-        <form autoComplete="off" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <label>Event Name:</label>
           <input type="text" name="eventName" placeholder="e.g. Henry's 3rd Birthday" value={formData.eventName} onChange={handleChange} required />
           <label>Date:</label>
