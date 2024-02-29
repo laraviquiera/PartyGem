@@ -15,6 +15,9 @@ export default function VendorForm({ isAdmin, onSubmit }) {
     phoneNumber: "",
     priceTier: "",
     businessLogo: "",
+    cuisineType: "",
+    capacity: 0,
+    venueType: ""
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -51,7 +54,7 @@ export default function VendorForm({ isAdmin, onSubmit }) {
     <div>
       {isAdmin && !submitted ? (
         <form onSubmit={handleSubmit} className="main-form">
-      <label>
+       <label>
         Service Type:
         <select
           name="serviceType"
@@ -244,16 +247,28 @@ export default function VendorForm({ isAdmin, onSubmit }) {
       <button type="submit">Submit</button>
     </form>
       ) : (
-      <div>
+      <div className="">
         <p>Name:{vendorFormData.name}</p>
-        <p>Location:{vendorFormData.location.address}</p>
-        <p>City: {vendorFormData.location.city}</p>
-        <p>State: {vendorFormData.location.state}</p>
-        <p>Zipcode:{vendorFormData.location.zipcode}</p>
+        <p>
+        Location:
+        {vendorFormData.location.address},
+        {vendorFormData.location.city},
+        {vendorFormData.location.state},
+        {vendorFormData.location.zipcode}
+        </p>
         <p>Email:{vendorFormData.email}</p>
         <p>Phone Number:{vendorFormData.phoneNumber}</p>
         <p>Price:{vendorFormData.priceTier}</p>
         <img src={vendorFormData.businessLogo}></img>
+        {vendorFormData.serviceType === "catering" && (
+            <p>Cuisine Type: {vendorFormData.cuisineType}</p>
+          )}
+          {vendorFormData.serviceType === "venue" && (
+            <>
+              <p>Capacity: {vendorFormData.capacity}</p>
+              <p>Venue Type: {vendorFormData.venueType}</p>
+            </>
+          )}
       </div>
       )}
     </div>
