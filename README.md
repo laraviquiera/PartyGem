@@ -5,7 +5,9 @@ Party Gem is an event planning application where users can manage, plan, and org
 
 ---
 ## Screenshot
-![ preview]()
+![ preview](https://i.imgur.com/ziTSNq0.png)
+![ preview](https://i.imgur.com/5bLIb5d.png)
+![ preview](https://i.imgur.com/xfQJ8x1.png)
 
 ---
 ## Technologies Used
