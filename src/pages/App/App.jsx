@@ -10,6 +10,7 @@ import VenuesPage from '../VenuesPage/VenuesPage';
 import VendorPage from '../VendorPage/VendorPage';
 import PlanPage from '../PlanPage/PlanPage';
 import AboutPage from '../AboutPage/AboutPage';
+import AdminPage from '../AdminPage/AdminPage';
 import NavBar from '../../components/NavBar/NavBar';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
               <Route path="/services/entertainment" element={<EntertainmentPage />} />
               <Route path="/services/venues" element={<VenuesPage />} />
               <Route path="/services/vendor" element={<VendorPage />} />
+              {user.isAdmin && <Route path="services/admin" element={<AdminPage />} />}
               <Route path="/plans" element={<PlanPage />} />
             </Routes>
           </>

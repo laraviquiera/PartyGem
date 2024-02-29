@@ -41,6 +41,8 @@ export default function VendorForm() {
     }
   };
 
+  const [error, setError] = useState('');
+
   return (
     <form onSubmit={handleSubmit}>
       <label>

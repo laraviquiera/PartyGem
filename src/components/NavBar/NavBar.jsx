@@ -25,8 +25,8 @@ export default function NavBar({ user, setUser }) {
                 <NavDropdown.Item as={NavLink} to="services/entertainment">Entertainment</NavDropdown.Item>
                 <NavDropdown.Item as={NavLink} to="services/venues">Venues & Event Spaces</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item as={NavLink} to="services/vendor">Vendor Page</NavDropdown.Item>
-                {user && user.isAdmin && <NavDropdown.Item as={NavLink} to="services/vendor-form">Vendor Form</NavDropdown.Item>}
+                <NavDropdown.Item as={NavLink} to="services/vendor">Vendors</NavDropdown.Item>
+                {user && user.isAdmin && <NavDropdown.Item as={NavLink} to="services/admin">Admin</NavDropdown.Item>}
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
