@@ -1,6 +1,7 @@
 import { useState } from "react";
+import './VendorForm.css'
 
-export default function VendorForm() {
+export default function VendorForm({ onSubmit }) {
   const [vendorFormData, setVendorFormData] = useState({
     serviceType: "",
     name: "",
@@ -35,7 +36,7 @@ export default function VendorForm() {
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
-      console.log("Form submitted:", vendorFormData);
+      onSubmit(vendorFormData);
     } catch {
       setError("Error submitting form:");
     }
@@ -44,7 +45,7 @@ export default function VendorForm() {
   const [error, setError] = useState('');
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="main-form">
       <label>
         Service Type:
         <select
@@ -141,7 +142,7 @@ export default function VendorForm() {
           <option value="">Select Price Tier</option>
           <option value="$">$</option>
           <option value="$$">$$</option>
-          <option value="$$$">$$</option>
+          <option value="$$$">$$$</option>
         </select>
       </label>
       <label>

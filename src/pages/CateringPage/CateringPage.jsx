@@ -1,12 +1,20 @@
-import CatererDetails from '../../components/CatererDetails/CatererDetails'
+
+import { useState } from "react";
 import CaterersList from '../../components/CaterersList/CaterersList';
+import CatererDetails from '../../components/CatererDetails/CatererDetails';
+import VendorForm from '../../components/VendorForm/VendorForm';
 
-export default function CateringPage(){
+export default function CateringPage() {
+  const [caterers, setCaterers] = useState([]);
 
-  return(
+  const handleSubmit = (formData) => {
+    setCaterers([...caterers, formData]);
+  };
+
+  return (
     <>
-    <CaterersList />
-    <CatererDetails />
+      <CaterersList caterers={caterers} />
+      <VendorForm onSubmit={handleSubmit} />
     </>
   );
 }
