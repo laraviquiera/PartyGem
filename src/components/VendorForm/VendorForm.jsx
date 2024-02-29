@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './VendorForm.css'
 
-export default function VendorForm({ onSubmit }) {
+export default function VendorForm({ isAdmin, onSubmit }) {
   const [vendorFormData, setVendorFormData] = useState({
     serviceType: "",
     name: "",
@@ -9,13 +9,15 @@ export default function VendorForm({ onSubmit }) {
       address: "",
       city: "",
       state: "",
-      country: "",
+      zipcode: ""
     },
     email: "",
     phoneNumber: "",
     priceTier: "",
     businessLogo: "",
   });
+
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,6 +38,7 @@ export default function VendorForm({ onSubmit }) {
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
+      setSubmitted(true);
       onSubmit(vendorFormData);
     } catch {
       setError("Error submitting form:");
@@ -45,7 +48,9 @@ export default function VendorForm({ onSubmit }) {
   const [error, setError] = useState('');
 
   return (
-    <form onSubmit={handleSubmit} className="main-form">
+    <div>
+      {isAdmin && !submitted ? (
+        <form onSubmit={handleSubmit} className="main-form">
       <label>
         Service Type:
         <select
@@ -210,7 +215,6 @@ export default function VendorForm({ onSubmit }) {
       )}
       {vendorFormData.serviceType === "venue" && (
         <>
-          {/* Additional fields for venue */}
           <label>
             Capacity:
             <input
@@ -239,5 +243,19 @@ export default function VendorForm({ onSubmit }) {
       )}
       <button type="submit">Submit</button>
     </form>
+      ) : (
+      <div>
+        <p>Name:{vendorFormData.name}</p>
+        <p>Location:{vendorFormData.location.address}</p>
+        <p>City: {vendorFormData.location.city}</p>
+        <p>State: {vendorFormData.location.state}</p>
+        <p>Zipcode:{vendorFormData.location.zipcode}</p>
+        <p>Email:{vendorFormData.email}</p>
+        <p>Phone Number:{vendorFormData.phoneNumber}</p>
+        <p>Price:{vendorFormData.priceTier}</p>
+        <img src={vendorFormData.businessLogo}></img>
+      </div>
+      )}
+    </div>
   );
 }
