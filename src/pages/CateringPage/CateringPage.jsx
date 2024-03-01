@@ -1,23 +1,59 @@
-
-import { useState } from "react";
-import CaterersList from '../../components/CaterersList/CaterersList';
-import CatererDetails from '../../components/CatererDetails/CatererDetails';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import VendorForm from '../../components/VendorForm/VendorForm';
+import CatererDetails from '../../components/CatererDetails/CatererDetails';
+import CaterersList from '../../components/CaterersList/CaterersList';
 
-export default function CateringPage() {
+export default function CateringPage({cateringAPI}) {
   const [caterers, setCaterers] = useState([]);
+  const [selectedCaterer, setSelectedCaterer] = useState(null);
+  const [form, setForm] = useState(false);
+  const [error, setError] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    cuisineType: '',
+    location: '',
+    email: '',
+    phoneNumber: '',
+    priceTier: '',
+    businessLogo: '',
+  });
 
-  const handleSubmit = (formData) => {
-    setCaterers([...caterers, formData]);
+
+  useEffect(() => {
+    const fetchCaterers = async () => {
+      try {
+        const fetchedCaterers = await cateringAPI.getCaterers();
+        setCaterers(fetchedCaterers);
+      } catch {
+        setError('Failed to fetch caterers');
+      }
+    };
+    fetchCaterers();
+  }, []);
+
+  const handleCatererClick = (caterer) => {
+    setSelectedCaterer(caterer);
   };
 
+
   return (
-    <>
-      <CaterersList caterers={caterers} />
-      <VendorForm onSubmit={handleSubmit} />
-    </>
+    <div className="catering-bg">
+      {form ? (
+        <VendorForm setForm={setForm} />
+      ) : (
+        <>
+          <div className="caterers-list">
+            <h1 className="catering-page-title">List of Caterers</h1>
+            <CaterersList caterers={caterers} handleCatererClick={handleCatererClick} />
+          </div>
+          {selectedCaterer && (
+            <div className="selected-plan">
+              <CatererDetails caterer={selectedCaterer} />
+            </div>
+          )}
+        </>
+      )}
+    </div>
   );
 }
-
-// use a useEffect to load the caterers or the venues, etc.,
-// then map that data into <Caterer>, <Venue>, etc. components.

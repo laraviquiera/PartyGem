@@ -1,9 +1,15 @@
-export default function CaterersList() {
+import { Link } from 'react-router-dom';
 
-    return (
-      <>
-      <h1>List of Caterers</h1>
-      <p>Location: San Francisco</p>
-      </>
-    );
-  }
+export default function CaterersList({ caterers, handleCatererClick }) {
+  return (
+    <div className="list">
+      {caterers.map((caterer) => (
+        <div key={caterer._id}>
+          <Link to="#" onClick={() => handleCatererClick(caterer)}>
+            {caterer.name}
+          </Link>
+        </div>
+      ))}
+    </div>
+  );
+}

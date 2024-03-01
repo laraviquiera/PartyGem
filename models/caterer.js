@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const cateringSchema = new Schema ({
+const catererSchema = new Schema ({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         required: null
@@ -23,7 +23,7 @@ const cateringSchema = new Schema ({
             address: String,
             city: String,
             state: String,
-            country: String
+            zipcode: Number
         },
         required: true
     },
@@ -42,4 +42,4 @@ const cateringSchema = new Schema ({
     businessLogo: String
 })
 
-module.exports = mongoose.model('Catering', cateringSchema)
+module.exports = mongoose.model('Caterer', catererSchema)

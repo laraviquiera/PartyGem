@@ -1,0 +1,16 @@
+.authpage-title {
+    padding: 1.5em 0 1em 0;
+    color: #ffffff;
+    font-family: "EB Garamond", serif;
+    background-color: rgb(245, 245, 220, 0.5);
+}
+
+.authpage-main {
+    background-image: url('https://i.imgur.com/DtFvgLt.jpeg');
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.authpage-main button {
+    margin-top: 3em;
+}

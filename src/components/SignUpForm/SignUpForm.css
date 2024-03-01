@@ -1,0 +1,10 @@
+.form-container {
+    width: 25em;
+    border: solid 1px rgb(128, 128, 128, 0.9);
+    justify-content: center;
+}
+
+.form-container form{
+    padding: 1rem;
+    justify-content: center;
+}
