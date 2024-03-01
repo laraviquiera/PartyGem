@@ -2,14 +2,15 @@
     display: flex;
     flex: 0 0 30rem;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: RGBA(239, 237, 241, 0.9);
     border-radius: 30px;
     border: solid 1px #545454;
-    text-align: left;
-    align-items: center;
-    justify-content: center;
     padding: 3rem;
-    margin: 10rem;
+    margin: 2em 7em;
     overflow-y: auto;
     font-family: "EB Garamond", serif;
+    color: #737373;
+    width: 30rem;
 }

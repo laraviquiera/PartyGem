@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import * as cateringAPI from '../../utilities/caterers-api';
 import CatererDetails from '../../components/CatererDetails/CatererDetails';
 import CaterersList from '../../components/CaterersList/CaterersList';
+import './CateringPage.css'
 
 export default function CateringPage() {
   const [caterers, setCaterers] = useState([]);
@@ -27,7 +28,6 @@ const handleCatererClick = (caterer) => {
   return (
     <div className="catering-bg">
       <div className="caterers-list">
-        <h1 className="catering-page-title">List of Caterers</h1>
         <CaterersList caterers={caterers} handleCatererClick={handleCatererClick} />
       </div>
       {selectedCaterer && (
