@@ -1,4 +1,4 @@
-const Caterer = require('../../models/caterer');
+const Entertainment = require('../../models/entertainment');
 
 module.exports = {
     create,
@@ -8,23 +8,23 @@ module.exports = {
 
 
 async function show (req, res) {
-    const caterer = await Caterer.findById(req.params.id);
-    res.json(caterer);
+    const entertainment = await Entertainment.findById(req.params.id);
+    res.json(entertainment);
 }
 
 async function index(req, res) {
-    const caterers = await Caterer.find({user: req.user._id});
-    res.json(caterers);
+    const entertainments = await Entertainment.find({user: req.user._id});
+    res.json(entertainments);
 };
 
 async function create(req, res) {
     try {
-        const { name, cuisineType, location, email,
+        const { name, entertainmentType, location, email,
             phoneNumber, priceTier, businessLogo } = req.body;
-        const newCaterer = new Caterer({
+        const newEntertainment = new Entertainment({
             user: req.user._id,
             name,
-            cuisineType,
+            entertainmentType,
             location,
             website,
             email,
@@ -32,8 +32,8 @@ async function create(req, res) {
             priceTier,
             businessLogo
         });
-        await newCaterer.save();
-        res.json(newCaterer);
+        await newEntertainment.save();
+        res.json(newEntertainment);
     } catch (err) {
         console.log(err)
         res.json({ message: err.message });

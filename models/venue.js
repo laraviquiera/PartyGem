@@ -19,6 +19,7 @@ const venueSchema = new Schema ({
         },
         required: true
     },
+    website: String,
     capacity: {
         type: Number,
         required: true

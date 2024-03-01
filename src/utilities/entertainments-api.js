@@ -1,15 +1,15 @@
 import sendRequest from "./send-request";
-const BASE_URL = '/api/caterers';
+const BASE_URL = '/api/entertainments';
 
-export async function addCaterer(formData) {
+export async function addEntertainment(formData) {
     return sendRequest(`${BASE_URL}`, 'POST', formData);
   };
   
-  export async function getCaterers() {
+  export async function getEntertainments() {
     return sendRequest(`${BASE_URL}`);
   };
   
-  export async function getCaterer(id) {
+  export async function getEntertainment(id) {
     return sendRequest(`${BASE_URL}/${id}`);
   };
   

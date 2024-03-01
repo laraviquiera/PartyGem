@@ -27,6 +27,7 @@ const catererSchema = new Schema ({
         },
         required: true
     },
+    website: String,
     email: {
         type: String,
         required: true

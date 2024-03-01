@@ -10,7 +10,7 @@ const entertainmentSchema = new Schema ({
         type: String,
         required: true
     },
-    type: {
+    entertainmentType: {
         type: String,
         enum: ['Clowns & Magicians','Dancers',
         'Face Painting', 'Live Bands & DJs',
@@ -26,6 +26,7 @@ const entertainmentSchema = new Schema ({
         },
         required: true
     },
+    website: String,
     email: {
         type: String,
         required: true

@@ -6,7 +6,8 @@ require('./config/database');
 const User = require('./models/user');
 const Plan = require('./models/plan');
 const Caterer = require('./models/caterer');
+const Entertainment = require('./models/entertainment');
 
 // Local variables will come in handy for holding retrieved documents
-let user, plan, caterer;
-let users, plans, caterers;
+let user, plan, caterer, entertainment;
+let users, plans, caterers, entertainments;

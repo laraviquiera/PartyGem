@@ -12,6 +12,7 @@ export default function VendorForm({ isAdmin }) {
       state: "",
       zipcode: ""
     },
+    website: "",
     email: "",
     phoneNumber: "",
     priceTier: "",
@@ -119,7 +120,16 @@ export default function VendorForm({ isAdmin }) {
           required
         />
       </label>
-
+      <label>
+        Website:
+        <input
+          type="url"
+          name="website"
+          value={vendorFormData.website}
+          onChange={handleChange}
+          required
+        />
+      </label>
       <label>
         Email:
         <input
@@ -257,12 +267,16 @@ export default function VendorForm({ isAdmin }) {
         {vendorFormData.location.state},
         {vendorFormData.location.zipcode}
         </p>
+        <p>Website:{vendorFormData.website}</p>
         <p>Email:{vendorFormData.email}</p>
         <p>Phone Number:{vendorFormData.phoneNumber}</p>
         <p>Price:{vendorFormData.priceTier}</p>
         <img src={vendorFormData.businessLogo}></img>
         {vendorFormData.serviceType === "catering" && (
             <p>Cuisine Type: {vendorFormData.cuisineType}</p>
+          )}
+          {vendorFormData.serviceType === "entertainment" && (
+            <p>Cuisine Type: {vendorFormData.entertainmentType}</p>
           )}
           {vendorFormData.serviceType === "venue" && (
             <>

@@ -1,16 +1,20 @@
-export default function EntertainmentList() {
+import { Link } from 'react-router-dom';
+import './EntertainmentList.css'
 
-    return (
-      <>
-      <h1>List of Entertainment</h1>
-      <ul>
-        <li>Clowns & Magicians</li>
-        <li>Dancers</li>
-        <li>Face Painting</li>
-        <li>Live Bands & DJs</li>
-        <li>Princess Characters & Mascots</li>
-        <li>Photo Booths</li>
-      </ul>
-      </>
-    );
-  }
+
+export default function EntertainmentList({ entertainments, handleEntertainmentClick }) {
+
+
+  return (
+    <div className="services-list">
+      <h3>List of Entertainments</h3>
+      {entertainments.map((entertainment) => (
+        <div key={entertainment._id}>
+          <Link to="#" onClick={() => handleEntertainmentClick(entertainment)}>
+            {entertainment.name}
+          </Link>
+        </div>
+      ))}
+    </div>
+  );
+}

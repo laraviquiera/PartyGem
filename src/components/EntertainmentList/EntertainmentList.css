@@ -1,0 +1,29 @@
+.services-list {
+    display: flex;
+    flex: 0 0 30rem;
+    flex-direction: column;
+    align-items: center;
+    font-family: "EB Garamond", serif;
+    overflow: auto;
+    padding: 3em;
+    width: 20rem;
+    background-color: RGBA(239, 237, 241, 0.9);
+    height: 30rem;
+    margin: 2em 7em;
+    text-align: left;
+    border-radius: 30px;
+    border: solid 1px #545454;
+}
+
+.services-list h3{
+    font-family: "EB Garamond", serif;
+    color: #737373;
+    text-align: center;
+}
+
+.services-list a {
+    font-family: "EB Garamond", serif;
+    color: #737373;
+    font-size: 20px;
+    overflow-y: auto;
+}
