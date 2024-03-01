@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import VendorForm from '../../components/VendorForm/VendorForm'
+import * as cateringAPI from '../../utilities/caterers-api';
 import CatererDetails from '../../components/CatererDetails/CatererDetails';
 import CaterersList from '../../components/CaterersList/CaterersList';
 
-export default function CateringPage({ cateringAPI, VendorFormData }) {
+export default function CateringPage() {
   const [caterers, setCaterers] = useState([]);
   const [selectedCaterer, setSelectedCaterer] = useState(null);
-  const [vendorFormData, setVendorFormData] = useState(null);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -15,18 +14,14 @@ export default function CateringPage({ cateringAPI, VendorFormData }) {
         const fetchedCaterers = await cateringAPI.getCaterers();
         setCaterers(fetchedCaterers);
       } catch (error) {
-        setError('Failed to fetch caterers: ' + error.message);
+        setError('Failed to fetch caterers: ', error);
       }
     };
     fetchCaterers();
-  }, [cateringAPI]);
+  }, []);
 
-  const handleCatererClick = (caterer) => {
+const handleCatererClick = (caterer) => {
     setSelectedCaterer(caterer);
-  };
-
-  const handleFormSubmit = (formData) => {
-    setVendorFormData(formData);
   };
 
   return (
@@ -37,7 +32,7 @@ export default function CateringPage({ cateringAPI, VendorFormData }) {
       </div>
       {selectedCaterer && (
         <div className="selected-caterer">
-          <CatererDetails caterer={selectedCaterer} VendorFormData={VendorFormData} />
+          <CatererDetails caterer={selectedCaterer} />
         </div>
       )}
     </div>

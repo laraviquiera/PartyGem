@@ -1,7 +1,8 @@
 import { useState } from "react";
+import * as cateringAPI from '../../utilities/caterers-api'
 import './VendorForm.css'
 
-export default function VendorForm({ isAdmin, onSubmit }) {
+export default function VendorForm({ isAdmin }) {
   const [vendorFormData, setVendorFormData] = useState({
     serviceType: "",
     name: "",
@@ -41,8 +42,8 @@ export default function VendorForm({ isAdmin, onSubmit }) {
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
+      await cateringAPI.addCaterer(vendorFormData)
       setSubmitted(true);
-      onSubmit(vendorFormData);
     } catch {
       setError("Error submitting form:");
     }

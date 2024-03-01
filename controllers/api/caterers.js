@@ -13,11 +13,12 @@ async function show (req, res) {
 }
 
 async function index(req, res) {
-    const cateresr = await Caterer.find({user: req.user._id});
+    const caterers = await Caterer.find({user: req.user._id});
     res.json(caterers);
 };
 
 async function create(req, res) {
+    console.log(req.body)
     try {
         const { name, cuisineType, location, email,
             phoneNumber, priceTier, businessLogo } = req.body;

@@ -15,7 +15,7 @@ const venueSchema = new Schema ({
             address: String,
             city: String,
             state: String,
-            country: String
+            zipcode: Number
         },
         required: true
     },
