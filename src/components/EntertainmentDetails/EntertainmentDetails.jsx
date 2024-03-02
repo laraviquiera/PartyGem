@@ -7,6 +7,7 @@ export default function EntertainmentDetails({ entertainment }) {
     <div className="service-details">
       <h2>{entertainment.name}</h2>
           <p><strong>Category:</strong> {entertainment.entertainmentType}</p>
+          <p><strong>Certification:</strong> {entertainment.certification}</p>
           <p><strong>Location:</strong> {entertainment.location.address}, {entertainment.location.city},
           {entertainment.location.state}, {entertainment.location.zipcode}</p>
           <p><strong>Website:</strong> {entertainment.website}</p>

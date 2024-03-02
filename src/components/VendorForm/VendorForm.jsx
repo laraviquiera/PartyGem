@@ -21,6 +21,7 @@ export default function VendorForm({ isAdmin }) {
     priceTier: "",
     businessLogo: "",
     cuisineType: "",
+    entertainmentType: "",
     capacity: 0,
     venueType: ""
   });
@@ -101,12 +102,12 @@ const handleSubmit = async (evt) => {
           required
         >
           <option value="">Select Certification</option>
-          <option value="minority-owned">Minority-Owned</option>
-          <option value="women-owned">Women-Owned</option>
-          <option value="black-owned">Black-Owned</option>
-          <option value="veteran-owned">Veteran-Owned</option>
-          <option value="service-disabled veteran">Service-Disabled Veteran</option>
-          <option value="lgbtq-owned">LGBTQ-Owned</option>
+          <option value="Minority-Owned">Minority-Owned</option>
+          <option value="Women-Owned">Women-Owned</option>
+          <option value="Black-Owned">Black-Owned</option>
+          <option value="Veteran-Owned">Veteran-Owned</option>
+          <option value="Service Disabled Veteran (SDV)">Service-Disabled Veteran</option>
+          <option value="LGBTQ-Owned">LGBTQ-Owned</option>
         </select>
       </label>
       <label>
@@ -217,6 +218,7 @@ const handleSubmit = async (evt) => {
               <option value="African">African</option>
               <option value="Asian Fusion">Asian Fusion</option>
               <option value="Chinese">Chinese</option>
+              <option value="Filipino">Filipino</option>
               <option value="French">French</option>
               <option value="Indian">Indian</option>
               <option value="Italian">Italian</option>
@@ -289,6 +291,7 @@ const handleSubmit = async (evt) => {
       ) : (
       <div className="">
         <p>Name:{vendorFormData.name}</p>
+        <p>Certification: {vendorFormData.certification}</p>
         <p>
         Location:
         {vendorFormData.location.address},

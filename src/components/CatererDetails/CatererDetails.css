@@ -2,6 +2,7 @@
     display: flex;
     flex: 0 0 30rem;
     flex-direction: column;
+    text-align: left;
     align-items: center;
     justify-content: center;
     background-color: RGBA(239, 237, 241, 0.9);

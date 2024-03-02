@@ -6,6 +6,7 @@ export default function VenueDetails({ venue }) {
     { venue &&
     <div className="service-details">
       <h2>{venue.name}</h2>
+          <p><strong>Certification:</strong> {venue.certification}</p>
           <p><strong>Location:</strong> {venue.location.address},{venue.location.city},
           {venue.location.state}, {venue.location.zipcode}</p>
           <p><strong>Email:</strong> {venue.email}</p>

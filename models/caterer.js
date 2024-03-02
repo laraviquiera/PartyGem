@@ -18,7 +18,7 @@ const catererSchema = new Schema ({
     },
     cuisineType: {
         type: String,
-        enum: ['American', 'African', 'Asian Fusion', 'Chinese',
+        enum: ['American', 'African', 'Asian Fusion', 'Chinese', 'Filipino',
         'French', 'Indian', 'Italian', 'Japanese', 'Korean',
         'Mediterranean', 'Mexican', 'Middle Eastern', 'Southern',
         'Taiwanese', 'Thai', 'Vietnamese', 'Others'],
