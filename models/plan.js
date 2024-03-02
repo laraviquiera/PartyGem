@@ -30,8 +30,9 @@ const planSchema = new Schema ({
         type: Number,
         required: true
     },
-    services: {
-        type:[String]
+    service: {
+        type: String,
+        required: true
     },
     invitationLink: String,
     notes: String

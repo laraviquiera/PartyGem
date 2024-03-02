@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import * as entertainmentAPI from '../../utilities/entertainments-api';
+import * as entertainmentsAPI from '../../utilities/entertainments-api';
 import EntertainmentDetails from '../../components/EntertainmentDetails/EntertainmentDetails';
 import EntertainmentList from '../../components/EntertainmentList/EntertainmentList';
 import './EntertainmentPage.css'
@@ -13,7 +13,7 @@ export default function EntertainmentPage() {
   useEffect(() => {
     const fetchEntertainments = async () => {
       try {
-        const fetchedEntertainments = await entertainmentAPI.getEntertainments();
+        const fetchedEntertainments = await entertainmentsAPI.getEntertainments();
         setEntertainments(fetchedEntertainments);
       } catch (error) {
         setError('Failed to fetch entertainments: ', error);
@@ -33,7 +33,7 @@ const handleEntertainmentClick = (entertainment) => {
       </div>
       {selectedEntertainment && (
         <div className="selected-caterer">
-          <EntertainmentDetails caterer={selectedEntertainment} />
+          <EntertainmentDetails entertainment={selectedEntertainment} />
         </div>
       )}
     </div>

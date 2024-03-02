@@ -10,6 +10,12 @@ const catererSchema = new Schema ({
         type: String,
         required: true
     },
+    certification: {
+        type: String,
+        enum: ['Minority-Owned', 'Women-Owned','Black-Owned',
+        'Veteran-Owned', 'Service Disabled Veteran (SDV)', 'LGBTQ-Owned'],
+        required: true
+    },
     cuisineType: {
         type: String,
         enum: ['American', 'African', 'Asian Fusion', 'Chinese',

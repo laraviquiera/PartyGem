@@ -19,12 +19,13 @@ async function index(req, res) {
 
 async function create(req, res) {
     try {
-        const { name, location, website, capacity, venueType, email,
+        const { name, location, certification, website, capacity, venueType, email,
             phoneNumber, priceTier, businessLogo } = req.body;
         const newVenue = new Venue({
             user: req.user._id,
             name,
             location,
+            certification,
             website,
             capacity,
             venueType,

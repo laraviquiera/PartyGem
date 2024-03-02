@@ -1,11 +1,14 @@
 import { useState } from "react";
 import * as cateringAPI from '../../utilities/caterers-api'
+import * as entertainmentsAPI from '../../utilities/entertainments-api'
+import * as venuesAPI from '../../utilities/venues-api'
 import './VendorForm.css'
 
 export default function VendorForm({ isAdmin }) {
   const [vendorFormData, setVendorFormData] = useState({
     serviceType: "",
     name: "",
+    certification: "",
     location: {
       address: "",
       city: "",
@@ -40,15 +43,24 @@ export default function VendorForm({ isAdmin }) {
     });
   };
 
-  const handleSubmit = async (evt) => {
+const handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
-      await cateringAPI.addCaterer(vendorFormData)
+      if (vendorFormData.serviceType === 'catering') {
+        // Handle catering form submission
+        await cateringAPI.addCaterer(vendorFormData);
+      } else if (vendorFormData.serviceType === 'entertainment') {
+        // Handle entertainment form submission
+        await entertainmentsAPI.addEntertainment(vendorFormData);
+      } else if (vendorFormData.serviceType === 'venue') {
+        // Handle venue form submission
+        await venuesAPI.addVenue(vendorFormData);
+      }
       setSubmitted(true);
     } catch {
-      setError("Error submitting form:");
+      setError('Error submitting form:');
     }
-  };
+};
 
   const [error, setError] = useState('');
 
@@ -79,6 +91,23 @@ export default function VendorForm({ isAdmin }) {
           onChange={handleChange}
           required
         />
+      </label>
+      <label>
+        Certification:
+        <select
+          name="certification"
+          value={vendorFormData.certification}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Select Certification</option>
+          <option value="minority-owned">Minority-Owned</option>
+          <option value="women-owned">Women-Owned</option>
+          <option value="black-owned">Black-Owned</option>
+          <option value="veteran-owned">Veteran-Owned</option>
+          <option value="service-disabled veteran">Service-Disabled Veteran</option>
+          <option value="lgbtq-owned">LGBTQ-Owned</option>
+        </select>
       </label>
       <label>
         Address:
