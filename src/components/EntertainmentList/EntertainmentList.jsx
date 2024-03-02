@@ -4,14 +4,13 @@ import './EntertainmentList.css'
 
 export default function EntertainmentList({ entertainments, handleEntertainmentClick }) {
 
-
   return (
     <div className="services-list">
-      <h3>List of Entertainments</h3>
+      <h3>Category</h3>
       {entertainments.map((entertainment) => (
         <div key={entertainment._id}>
-          <Link to="#" onClick={() => handleEntertainmentClick(entertainment)}>
-            {entertainment.name}
+          <Link to={`/entertainment/${entertainment.entertainmentType}`} onClick={() => handleEntertainmentClick(entertainment)}>
+            {entertainment.entertainmentType}
           </Link>
         </div>
       ))}

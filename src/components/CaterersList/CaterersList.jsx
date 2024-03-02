@@ -4,7 +4,6 @@ import './CaterersList.css'
 
 export default function CaterersList({ caterers, handleCatererClick }) {
 
-
   return (
     <div className="services-list">
       <h3>List of Caterers</h3>

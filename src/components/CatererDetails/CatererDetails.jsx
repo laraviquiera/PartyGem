@@ -10,6 +10,7 @@ export default function CatererDetails({ caterer }) {
           <p><strong>Location:</strong> {caterer.location.address},{caterer.location.city},
           {caterer.location.state}, {caterer.location.zipcode}</p>
           <p><strong>Email:</strong> {caterer.email}</p>
+          <p><strong>Website:</strong> {caterer.website}</p>
           <p><strong>Phone Number:</strong> {caterer.phoneNumber}</p>
           <p><strong>Price:</strong> {caterer.priceTier}</p>
           <img src={caterer.businessLogo} style={{ width: '100px', height: '100px' }} />

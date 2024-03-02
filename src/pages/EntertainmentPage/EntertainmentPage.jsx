@@ -7,6 +7,7 @@ import './EntertainmentPage.css'
 export default function EntertainmentPage() {
   const [Entertainments, setEntertainments] = useState([]);
   const [selectedEntertainment, setSelectedEntertainment] = useState(null);
+  const [selectedEntertainmentType, setSelectedEntertainmentType] = useState(null);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -22,7 +23,7 @@ export default function EntertainmentPage() {
   }, []);
 
 const handleEntertainmentClick = (entertainment) => {
-    setSelectedEntertainment(entertainment);
+    setSelectedEntertainmentType(entertainment.entertainmentType);
   };
 
   return (

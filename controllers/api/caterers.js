@@ -19,7 +19,7 @@ async function index(req, res) {
 
 async function create(req, res) {
     try {
-        const { name, cuisineType, location, email,
+        const { name, cuisineType, location, website, email,
             phoneNumber, priceTier, businessLogo } = req.body;
         const newCaterer = new Caterer({
             user: req.user._id,

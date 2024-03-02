@@ -271,12 +271,12 @@ export default function VendorForm({ isAdmin }) {
         <p>Email:{vendorFormData.email}</p>
         <p>Phone Number:{vendorFormData.phoneNumber}</p>
         <p>Price:{vendorFormData.priceTier}</p>
-        <img src={vendorFormData.businessLogo}></img>
+        <img src={vendorFormData.businessLogo} style={{ width: '100px', height: '100px' }}></img>
         {vendorFormData.serviceType === "catering" && (
             <p>Cuisine Type: {vendorFormData.cuisineType}</p>
           )}
           {vendorFormData.serviceType === "entertainment" && (
-            <p>Cuisine Type: {vendorFormData.entertainmentType}</p>
+            <p>Entertainment Type: {vendorFormData.entertainmentType}</p>
           )}
           {vendorFormData.serviceType === "venue" && (
             <>

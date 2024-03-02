@@ -19,7 +19,7 @@ async function index(req, res) {
 
 async function create(req, res) {
     try {
-        const { name, entertainmentType, location, email,
+        const { name, entertainmentType, location, website, email,
             phoneNumber, priceTier, businessLogo } = req.body;
         const newEntertainment = new Entertainment({
             user: req.user._id,
