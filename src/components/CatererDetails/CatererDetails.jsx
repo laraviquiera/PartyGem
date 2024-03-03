@@ -8,7 +8,7 @@ export default function CatererDetails({ caterer }) {
       <h2>{caterer.name}</h2>
           <p><strong>Cuisine:</strong> {caterer.cuisineType}</p>
           <p><strong>Certification:</strong> {caterer.certification}</p>
-          <p><strong>Location:</strong> {caterer.location.address},{caterer.location.city},
+          <p><strong>Location:</strong> {caterer.location.address}, {caterer.location.city}, 
           {caterer.location.state}, {caterer.location.zipcode}</p>
           <p><strong>Email:</strong> {caterer.email}</p>
           <p><strong>Website:</strong> {caterer.website}</p>
