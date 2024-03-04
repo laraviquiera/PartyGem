@@ -5,7 +5,7 @@ import PlanForm from '../../components/PlanForm/PlanForm';
 import PlanDetails from '../../components/PlanDetails/PlanDetails';
 import './PlanPage.css'
 
-export default function PlanPage({ caterers, setCaterers }) {
+export default function PlanPage({ caterers, setCaterers, venues }) {
   const [plans, setPlans] = useState([]);
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [form, setForm] = useState(false);
@@ -40,7 +40,7 @@ export default function PlanPage({ caterers, setCaterers }) {
 const handleAddPlan = async () => {
   try {
     const response = await plansAPI.createPlan(formData);
-    setCaterers([...caterers, response])
+    setPlans([...plans, response])
     setForm(false)
   } catch {
     setError('Failed to create plan');
@@ -109,6 +109,8 @@ const handleAddPlan = async () => {
             <div className="selected-plan">
               <PlanDetails
               plan={selectedPlan}
+              caterers={caterers}
+              venues={venues}
               onDeletePlan={handleDeletePlan} 
               onUpdatePlan={handleUpdatePlan}
               formData={formData}

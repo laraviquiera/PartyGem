@@ -3,7 +3,7 @@ import CatererDetails from '../../components/CatererDetails/CatererDetails';
 import CaterersList from '../../components/CaterersList/CaterersList';
 import './CateringPage.css'
 
-export default function CateringPage({ caterers, setCaterers}) {
+export default function CateringPage({ caterers }) {
   const [selectedCaterer, setSelectedCaterer] = useState(null);
 
 

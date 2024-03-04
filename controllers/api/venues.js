@@ -8,7 +8,7 @@ module.exports = {
 
 
 async function show (req, res) {
-    const venue = await Vanue.findById(req.params.id);
+    const venue = await Venue.findById(req.params.id);
     res.json(venue);
 }
 
@@ -19,13 +19,13 @@ async function index(req, res) {
 
 async function create(req, res) {
     try {
-        const { name, location, certification, website, capacity, venueType, email,
+        const { name, certification, location, website, capacity, venueType, email,
             phoneNumber, priceTier, businessLogo } = req.body;
         const newVenue = new Venue({
             user: req.user._id,
             name,
-            location,
             certification,
+            location,
             website,
             capacity,
             venueType,

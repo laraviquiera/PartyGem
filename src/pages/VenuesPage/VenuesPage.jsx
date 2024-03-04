@@ -1,25 +1,11 @@
 import { useEffect, useState } from 'react';
-import * as venuesAPI from '../../utilities/venues-api';
 import VenueDetails from '../../components/VenueDetails/VenueDetails';
 import VenuesList from '../../components/VenuesList/VenuesList';
 import './VenuesPage.css'
 
-export default function VenuesPage() {
-  const [venues, setVenues] = useState([]);
+export default function VenuesPage({ venues }) {
   const [selectedVenue, setSelectedVenue] = useState(null);
-  const [error, setError] = useState('');
 
-  useEffect(() => {
-    const fetchVenues = async () => {
-      try {
-        const fetchedVenues = await venuesAPI.getVenues();
-        setVenues(fetchedVenues);
-      } catch (error) {
-        setError('Failed to fetch venues: ', error);
-      }
-    };
-    fetchVenues();
-  }, []);
 
 const handleVenueClick = (venue) => {
     setSelectedVenue(venue);
