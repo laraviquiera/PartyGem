@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
@@ -12,9 +12,24 @@ import PlanPage from '../PlanPage/PlanPage';
 import AboutPage from '../AboutPage/AboutPage';
 import AdminPage from '../AdminPage/AdminPage';
 import NavBar from '../../components/NavBar/NavBar';
+import * as cateringAPI from '../../utilities/caterers-api';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [caterers, setCaterers] = useState([]);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const fetchCaterers = async () => {
+      try {
+        const fetchedCaterers = await cateringAPI.getCaterers();
+        setCaterers(fetchedCaterers);
+      } catch (error) {
+        setError('Failed to fetch caterers: ', error);
+      }
+    };
+    fetchCaterers();
+  }, []);
 
   return (
     <main className="App">
@@ -23,12 +38,12 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
-              <Route path="/services/catering" element={<CateringPage />} />
+              <Route path="/services/catering" element={<CateringPage caterers={caterers} setCaterers={setCaterers}/>} />
               <Route path="/services/entertainment" element={<EntertainmentPage />} />
               <Route path="/services/venues" element={<VenuesPage />} />
               <Route path="/services/vendor" element={<VendorPage />} />
               {user.isAdmin && <Route path="services/admin" element={<AdminPage />} />}
-              <Route path="/plans" element={<PlanPage />} />
+              <Route path="/plans" element={<PlanPage caterers={caterers} setCaterers={setCaterers}/>} />
             </Routes>
           </>
           :

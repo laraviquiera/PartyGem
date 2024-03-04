@@ -41,19 +41,19 @@ async function deletePlan(req, res) {
 
 
 async function show (req, res) {
-    const plan = await Plan.findById(req.params.id);
+    const plan = await Plan.findById(req.params.id).populate('caterer').exec();
     res.json(plan);
 }
 
 async function index(req, res) {
-    const plans = await Plan.find({user: req.user._id});
+    const plans = await Plan.find({user: req.user._id}).populate('caterer').exec();
     res.json(plans);
 };
 
 async function create(req, res) {
     try {
         const { eventName, date, time, location, numberOfGuests,
-            budget, services, invitationLink, notes } = req.body;
+            budget, caterer, otherServices, invitationLink, notes } = req.body;
         const newPlan = new Plan({
             user: req.user._id,
             eventName,
@@ -62,7 +62,8 @@ async function create(req, res) {
             location,
             numberOfGuests,
             budget,
-            services,
+            caterer,
+            otherServices,
             invitationLink,
             notes
         });

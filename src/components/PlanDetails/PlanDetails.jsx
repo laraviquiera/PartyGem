@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import './PlanDetails.css'
 
-export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, updateFormData }) {
+export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers }) {
   const [isUpdating, setIsUpdating] = useState(false);
-  const [updatedPlan, setUpdatedPlan] = useState(plan);
+  const [updatedPlan, setUpdatedPlan] = useState(plan && plan);
   
   const handleDelete = () => onDeletePlan(plan._id);
 
   const handleUpdate = () => {
-    updateFormData(plan);
     setIsUpdating(true);
   };
   
@@ -53,8 +52,17 @@ export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, updateFo
           <input type="number" name="numberOfGuests" value={updatedPlan.numberOfGuests} onChange={handleInputChange} /><br />
           <label>Budget: </label>
           <input type="text" name="budget" value={updatedPlan.budget} onChange={handleInputChange} /><br />
-          <label>Services: </label>
-          <input type="text" name="services" value={updatedPlan.services.join(', ')} onChange={handleInputChange} /><br />
+          <label>Caterer:</label>
+            <select name="caterer" value={updatedPlan.caterer} onChange={handleInputChange}>
+              <option value="">Select a caterer</option>
+                {caterers && caterers.map((caterer) => (
+              <option key={caterer._id} value={caterer._id}>
+                {caterer.name}
+              </option>
+              ))}
+            </select><br />
+          <label>Other Services: </label>
+          <input type="text" name="otherServices" value={updatedPlan.otherServices} onChange={handleInputChange} /><br />
           <label>Invitation Link: </label>
           <input type="text" name="invitationLink" value={updatedPlan.invitationLink} onChange={handleInputChange} /><br />
           <label>Notes: </label>
@@ -69,7 +77,8 @@ export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, updateFo
           <p><strong>Location:</strong> {plan.location}</p>
           <p><strong>Number of Guests:</strong> {plan.numberOfGuests}</p>
           <p><strong>Budget:</strong> {plan.budget}</p>
-          <p><strong>Services:</strong> {plan.services.join(', ')}</p>
+          <p><strong>Caterer:</strong> {plan.caterer.name}</p>
+          <p><strong>Other Services:</strong> {plan.otherServices}</p>
           <p><strong>Invitation:</strong> <a href={plan.invitationLink} target="_blank">{plan.invitationLink ? 'Link' : ''}</a></p>
           <p><strong>Notes:</strong> {plan.notes}</p>
           <button onClick={handleUpdate}>Update</button>

@@ -1,25 +1,11 @@
 import { useEffect, useState } from 'react';
-import * as cateringAPI from '../../utilities/caterers-api';
 import CatererDetails from '../../components/CatererDetails/CatererDetails';
 import CaterersList from '../../components/CaterersList/CaterersList';
 import './CateringPage.css'
 
-export default function CateringPage() {
-  const [caterers, setCaterers] = useState([]);
+export default function CateringPage({ caterers, setCaterers}) {
   const [selectedCaterer, setSelectedCaterer] = useState(null);
-  const [error, setError] = useState('');
 
-  useEffect(() => {
-    const fetchCaterers = async () => {
-      try {
-        const fetchedCaterers = await cateringAPI.getCaterers();
-        setCaterers(fetchedCaterers);
-      } catch (error) {
-        setError('Failed to fetch caterers: ', error);
-      }
-    };
-    fetchCaterers();
-  }, []);
 
 const handleCatererClick = (caterer) => {
     setSelectedCaterer(caterer);

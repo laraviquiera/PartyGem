@@ -5,7 +5,7 @@ import PlanForm from '../../components/PlanForm/PlanForm';
 import PlanDetails from '../../components/PlanDetails/PlanDetails';
 import './PlanPage.css'
 
-export default function PlanPage() {
+export default function PlanPage({ caterers, setCaterers }) {
   const [plans, setPlans] = useState([]);
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [form, setForm] = useState(false);
@@ -17,12 +17,12 @@ export default function PlanPage() {
     location: '',
     numberOfGuests: '',
     budget: '',
-    services: '',
+    caterer: '',
+    otherServices: [],
     invitationLink: '',
     notes: ''
   });
 
-  
 
   useEffect(() => {
     const fetchPlans = async () => {
@@ -33,8 +33,20 @@ export default function PlanPage() {
         setError('Failed to fetch plans:');
       }
     };
+
     fetchPlans();
   }, []);
+
+const handleAddPlan = async () => {
+  try {
+    const response = await plansAPI.createPlan(formData);
+    setCaterers([...caterers, response])
+    setForm(false)
+  } catch {
+    setError('Failed to create plan');
+  }
+};
+
 
   const handlePlanClick = (plan) => {
     setSelectedPlan(plan);
@@ -68,8 +80,16 @@ export default function PlanPage() {
 
   return (
     <div className="plan-bg">
+      {error && error}
       {form ? (
-        <PlanForm setForm={setForm} />
+        <PlanForm
+        onAddPlan={handleAddPlan}
+        setForm={setForm}
+        caterers={caterers}
+        setCaterers={setCaterers}
+        setFormData={setFormData}
+        formData={formData}
+        />
       ) : (
         <>
         <div className="event-list">

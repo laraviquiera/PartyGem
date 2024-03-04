@@ -26,14 +26,12 @@ const planSchema = new Schema ({
         type: Number,
         required: true
     },
-    budget: {
-        type: Number,
-        required: true
+    budget: Number,
+    caterer: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Caterer'
     },
-    service: {
-        type: String,
-        required: true
-    },
+    otherServices: String,
     invitationLink: String,
     notes: String
 })
