@@ -10,7 +10,7 @@ export default function VenueDetails({ venue }) {
           <p><strong>Location:</strong> {venue.location.address},{venue.location.city},
           {venue.location.state}, {venue.location.zipcode}</p>
           <p><strong>Email:</strong> {venue.email}</p>
-          <p><strong>Website:</strong> {venue.website}</p>
+          <p><strong>Website:</strong> {venue.website ? <a href={venue.website} target="_blank">Click to visit</a> : ''}</p>
           <p><strong>Capacity:</strong> {venue.capacity}</p>
           <p><strong>Type:</strong> {venue.venueType}</p>
           <p><strong>Phone Number:</strong> {venue.phoneNumber}</p>
