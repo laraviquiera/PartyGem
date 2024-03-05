@@ -1,0 +1,26 @@
+.vendorpage-bg {
+    background-color: #EFE9E4;
+    background-image: url('https://i.imgur.com/nTES4F2.png');
+    color: #5E5343;
+    font-family: "EB Garamond", serif;
+    height: 100vh;
+    padding: 5em;
+}
+
+.vendorpage-heading h1 {
+    font-family: "EB Garamond", serif;
+}
+
+.vendorpage-p {
+    margin: 2em 11em;
+    font-size: 20px;
+    color: #5E5343;
+    font-family: "EB Garamond", serif;
+}
+
+.vendorpage-two {
+    margin: 2em 11em;
+    font-size: 20px;
+    color: #5E5343;
+    font-family: "EB Garamond", serif;
+}

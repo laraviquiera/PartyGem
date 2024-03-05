@@ -14,7 +14,7 @@ const handleVenueClick = (venue) => {
   return (
     <div className="venues-bg">
       <div className="caterers-list">
-        <VenuesList venues={venues} handleCatererClick={handleVenueClick} />
+        <VenuesList venues={venues} handleVenueClick={handleVenueClick} />
       </div>
       {selectedVenue && (
         <div className="selected-caterer">

@@ -1,7 +1,7 @@
 ## Party Gem 💎
 ---
 
-Party Gem is an event planning application where users can manage, plan, and organize their upcoming event (birthday, wedding, bridal shower, retirement party, and more). Users can also browse catering companies, entertainment, and venues to add to their planner.
+Party Gem exclusively features vendors that are Minority-owned, Women-owned, LGBTQ-owned, Black-owned, Veteran-owned, and Service-Disabled Veteran. It's an event planning application where users can manage, plan, and organize their upcoming event (birthday, wedding, bridal shower, retirement party, and more). Users can also browse catering companies, entertainment, and venues to add to their planner.
 
 ---
 ## Screenshot
