@@ -1,9 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import * as plansAPI from '../../utilities/plans-api';
 import './PlanDetails.css'
 
-export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers, venues }) {
+export default function PlanDetails({ selectedPlan, id, onDeletePlan, onUpdatePlan, caterers, venues }) {
   const [isUpdating, setIsUpdating] = useState(false);
-  const [updatedPlan, setUpdatedPlan] = useState(plan && plan);
+  const [updatedPlan, setUpdatedPlan] = useState(selectedPlan && selectedPlan);
+  const [plan, setPlan] = useState(null);
+
+  useEffect(() => {
+    async function getPlan() {
+      const planDetail = await plansAPI.getPlanDetail(id)
+      setPlan(planDetail)
+    }
+    getPlan();
+  }, [plan])
   
   const handleDelete = () => onDeletePlan(plan._id);
 
@@ -40,7 +50,7 @@ export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers
 
   return (
     <div className="plan-details">
-      <h2>{plan.eventName}</h2>
+      <h2>{plan && plan.eventName}</h2>
       {isUpdating ? (
         <>
           <label>Date: </label>
@@ -83,20 +93,20 @@ export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers
         </>
       ) : (
         <>
-          <p><strong>Date:</strong> {formatDate(plan.date)}</p>
-          <p><strong>Time:</strong> {formatTime(plan.time)}</p>
-          <p><strong>Location:</strong> {plan.location}</p>
-          <p><strong>Number of Guests:</strong> {plan.numberOfGuests}</p>
-          <p><strong>Budget:</strong> {plan.budget}</p>
-          {!isUpdating && plan.caterer && (
-          <p><strong>Caterer:</strong> {plan.caterer.name}</p>
+          <p><strong>Date:</strong> {formatDate(plan && plan.date)}</p>
+          <p><strong>Time:</strong> {formatTime(plan && plan.time)}</p>
+          <p><strong>Location:</strong> {plan && plan.location}</p>
+          <p><strong>Number of Guests:</strong> {plan && plan.numberOfGuests}</p>
+          <p><strong>Budget:</strong> {plan && plan.budget}</p>
+          {!isUpdating && plan && plan.caterer && (
+          <p><strong>Caterer:</strong> {plan && plan.caterer.name}</p>
           )}
-          {!isUpdating && plan.venue && (
-          <p><strong>Venue:</strong> {plan.venue.name}</p>
+          {!isUpdating && plan && plan.venue && (
+          <p><strong>Venue:</strong> {plan && plan.venue.name}</p>
           )}
-          <p><strong>Other Services:</strong> {plan.otherServices}</p>
-          <p><strong>Invitation:</strong> <a href={plan.invitationLink} target="_blank">{plan.invitationLink ? 'Link' : ''}</a></p>
-          <p><strong>Notes:</strong> {plan.notes}</p>
+          <p><strong>Other Services:</strong> {plan && plan.otherServices}</p>
+          <p><strong>Invitation:</strong> <a href={plan && plan.invitationLink} target="_blank">{plan && plan.invitationLink ? 'Link' : ''}</a></p>
+          <p><strong>Notes:</strong> {plan && plan.notes}</p>
           <button onClick={handleUpdate}>Update</button>
           <button onClick={handleDelete}>Delete</button>
         </>

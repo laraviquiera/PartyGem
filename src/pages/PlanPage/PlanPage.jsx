@@ -111,7 +111,8 @@ const handleAddPlan = async () => {
           {selectedPlan && (
             <div className="selected-plan">
               <PlanDetails
-              plan={selectedPlan}
+              selectedPlan={selectedPlan}
+              id={selectedPlan._id}
               caterers={caterers}
               venues={venues}
               onDeletePlan={handleDeletePlan} 

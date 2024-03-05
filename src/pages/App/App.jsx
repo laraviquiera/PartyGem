@@ -25,7 +25,6 @@ export default function App() {
     const fetchCaterers = async () => {
       try {
         const fetchedCaterers = await cateringAPI.getCaterers();
-        console.log(fetchedCaterers)
         setCaterers(fetchedCaterers);
       } catch (error) {
         setError('Failed to fetch caterers: ', error);

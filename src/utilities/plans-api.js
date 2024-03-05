@@ -9,7 +9,7 @@ export async function getPlans() {
   return sendRequest(BASE_URL);
 };
 
-export async function getPlan(id) {
+export async function getPlanDetail(id) {
   return sendRequest(`${BASE_URL}/${id}`);
 };
 
