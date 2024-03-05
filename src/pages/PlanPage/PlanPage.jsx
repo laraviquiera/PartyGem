@@ -5,7 +5,7 @@ import PlanForm from '../../components/PlanForm/PlanForm';
 import PlanDetails from '../../components/PlanDetails/PlanDetails';
 import './PlanPage.css'
 
-export default function PlanPage({ caterers, setCaterers, venues }) {
+export default function PlanPage({ caterers, setCaterers, venues, setVenues }) {
   const [plans, setPlans] = useState([]);
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [form, setForm] = useState(false);
@@ -18,6 +18,7 @@ export default function PlanPage({ caterers, setCaterers, venues }) {
     numberOfGuests: '',
     budget: '',
     caterer: '',
+    venue: '',
     otherServices: [],
     invitationLink: '',
     notes: ''
@@ -87,6 +88,8 @@ const handleAddPlan = async () => {
         setForm={setForm}
         caterers={caterers}
         setCaterers={setCaterers}
+        venues={venues}
+        setVenues={setVenues}
         setFormData={setFormData}
         formData={formData}
         />

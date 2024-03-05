@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './PlanDetails.css'
 
-export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers, setCaterers }) {
+export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers, setCaterers, venues, setVenues }) {
   const [isUpdating, setIsUpdating] = useState(false);
   const [updatedPlan, setUpdatedPlan] = useState(plan && plan);
   
@@ -23,8 +23,8 @@ export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setUpdatedPlan({ ...updatedPlan, [name]: value });
-    setCaterers([...caterers, handleInputChange])
+    const updatedValue = name === 'caterer' && name === 'venue' ? value : value;
+    setUpdatedPlan({ ...updatedPlan, [name]: updatedValue });
   };
 
   const formatDate = (date) => {
@@ -61,7 +61,17 @@ export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers
                 {caterer.name}
               </option>
               ))}
-            </select><br />
+            </select> <br />
+          <label>Venue:</label>
+            <select name="venue" value={updatedPlan.venue} onChange={handleInputChange}>
+              <option value="">Select a venue</option>
+                {venues && venues.map((venue) => (
+              <option key={venue._id} value={venue._id}>
+                {venue.name}
+              </option>
+              ))}
+            </select>
+            <br />
           <label>Other Services: </label>
           <input type="text" name="otherServices" value={updatedPlan.otherServices} onChange={handleInputChange} /><br />
           <label>Invitation Link: </label>
@@ -78,7 +88,12 @@ export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers
           <p><strong>Location:</strong> {plan.location}</p>
           <p><strong>Number of Guests:</strong> {plan.numberOfGuests}</p>
           <p><strong>Budget:</strong> {plan.budget}</p>
+          {!isUpdating && plan.caterer && (
           <p><strong>Caterer:</strong> {plan.caterer.name}</p>
+          )}
+          {!isUpdating && plan.venue && (
+          <p><strong>Venue:</strong> {plan.venue.name}</p>
+          )}
           <p><strong>Other Services:</strong> {plan.otherServices}</p>
           <p><strong>Invitation:</strong> <a href={plan.invitationLink} target="_blank">{plan.invitationLink ? 'Link' : ''}</a></p>
           <p><strong>Notes:</strong> {plan.notes}</p>

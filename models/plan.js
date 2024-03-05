@@ -31,6 +31,10 @@ const planSchema = new Schema ({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Caterer'
     },
+    venue: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Venue'
+    },
     otherServices: String,
     invitationLink: String,
     notes: String

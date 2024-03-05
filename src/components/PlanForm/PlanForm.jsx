@@ -1,8 +1,7 @@
-import * as plansAPI from '../../utilities/plans-api';
 import { useState } from 'react'
 import './PlanForm.css'
 
-export default function PlanForm({ setForm, caterers, onAddPlan, formData, setFormData }) {
+export default function PlanForm({ setForm, caterers, venues, onAddPlan, formData, setFormData }) {
   const [error, setError] = useState('');
 
 
@@ -43,6 +42,15 @@ export default function PlanForm({ setForm, caterers, onAddPlan, formData, setFo
                 {caterers.map((caterer) => (
               <option key={caterer._id} value={caterer._id}>
                 {caterer.name}
+              </option>
+              ))}
+            </select>
+          <label>Venue:</label>
+            <select name="venue" value={formData.venue} onChange={handleChange}>
+              <option value="">Select a venue</option>
+                {venues.map((venue) => (
+              <option key={venue._id} value={venue._id}>
+                {venue.name}
               </option>
               ))}
             </select>

@@ -57,7 +57,7 @@ export default function App() {
               <Route path="/services/venues" element={<VenuesPage venues={venues} setVenues={setVenues} />} />
               <Route path="/services/vendor" element={<VendorPage />} />
               {user.isAdmin && <Route path="services/admin" element={<AdminPage />} />}
-              <Route path="/plans" element={<PlanPage caterers={caterers} setCaterers={setCaterers}/>} />
+              <Route path="/plans" element={<PlanPage caterers={caterers} setCaterers={setCaterers} venues={venues} setVenues={setVenues} />} />
             </Routes>
           </>
           :
