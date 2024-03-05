@@ -22,7 +22,7 @@ export default function PlanForm({ setForm, caterers, onAddPlan, formData, setFo
 
   return (
     <>
-      <div className="form-container">
+      <div className="planform-container">
         <h1 className="form-heading">PLAN YOUR EVENT</h1>
         <form onSubmit={handleSubmit}>
           <label>Event Name:</label>

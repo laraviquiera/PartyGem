@@ -9,17 +9,24 @@
     margin: 1rem;
 }
 
-.form-container {
+.planform-container {
     display: flex;
     flex-direction: column;
     align-content: center;
-    align-items: center;
     text-align: center;
     margin: 3em auto;
     background-color: RGBA(239, 237, 241, 0.95);
+    border: solid 1px rgb(128, 128, 128, 0.9);
+    border-radius: 10px;
 }
 
-.form-container label {
+.planform-container form {
+    padding: 2rem 3rem;
+    justify-content: center;
+}
+
+
+.planform-container label {
     color: #4e4c4c;
     text-align: center;
     align-content: center;

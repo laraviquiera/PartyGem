@@ -1,4 +1,7 @@
-.signupformform-container {
+.form-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
     width: 25em;
     border: solid 1px rgb(128, 128, 128, 0.9);
     justify-content: center;

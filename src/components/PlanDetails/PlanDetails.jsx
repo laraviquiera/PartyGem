@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './PlanDetails.css'
 
-export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers }) {
+export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers, setCaterers }) {
   const [isUpdating, setIsUpdating] = useState(false);
   const [updatedPlan, setUpdatedPlan] = useState(plan && plan);
   
@@ -24,6 +24,7 @@ export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUpdatedPlan({ ...updatedPlan, [name]: value });
+    setCaterers([...caterers, handleInputChange])
   };
 
   const formatDate = (date) => {

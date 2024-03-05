@@ -291,7 +291,7 @@ const handleSubmit = async (evt) => {
       ) : (
       <div className="">
         <p>Name:{vendorFormData.name}</p>
-        <p>Certification: {vendorFormData.certification}</p>
+        <p>Certification: {vendorFormData.certification.join(', ')}</p>
         <p>
         Location:
         {vendorFormData.location.address},
