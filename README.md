@@ -27,7 +27,7 @@ Party Gem is an event planning application where users can manage, plan, and org
 
 - [Click to View Project Planning](https://trello.com/b/stT7uw21/capstone-project-mern-stack-party-gem)
 
-- [Click to View Party Gem App]()
+- [Click to View Party Gem App](https://party-gem-1-9f1d68171923.herokuapp.com/about)
 
 ---
 ## Next Steps
