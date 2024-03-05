@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './PlanDetails.css'
 
-export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers, setCaterers, venues, setVenues }) {
+export default function PlanDetails({ plan, onDeletePlan, onUpdatePlan, caterers, venues }) {
   const [isUpdating, setIsUpdating] = useState(false);
   const [updatedPlan, setUpdatedPlan] = useState(plan && plan);
   

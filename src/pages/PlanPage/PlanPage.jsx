@@ -19,7 +19,7 @@ export default function PlanPage({ caterers, setCaterers, venues, setVenues }) {
     budget: '',
     caterer: '',
     venue: '',
-    otherServices: [],
+    otherServices: '',
     invitationLink: '',
     notes: ''
   });

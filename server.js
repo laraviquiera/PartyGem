@@ -29,9 +29,9 @@ app.use('/api/users', require('./routes/api/users'));
 // Protect all routes below from anonymous users
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/plans', ensureLoggedIn, require('./routes/api/plans'));
-app.use('/api/caterers', ensureLoggedIn, require('./routes/api/caterers'));
+app.use('/api/caterers', require('./routes/api/caterers'));
 app.use('/api/entertainments', ensureLoggedIn, require('./routes/api/entertainments'));
-app.use('/api/venues', ensureLoggedIn, require('./routes/api/venues'));
+app.use('/api/venues', require('./routes/api/venues'));
 
 
 // The following "catch all" route (note the *) is necessary
