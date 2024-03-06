@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CatererDetails from '../../components/CatererDetails/CatererDetails';
 import CaterersList from '../../components/CaterersList/CaterersList';
 import './CateringPage.css'

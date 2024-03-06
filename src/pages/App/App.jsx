@@ -53,12 +53,12 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/" element={<AboutPage />}/>
-              <Route path="/services/catering" element={<CateringPage caterers={caterers} setCaterers={setCaterers}/>} />
+              <Route path="/services/catering" element={<CateringPage caterers={caterers} />} />
               <Route path="/services/entertainment" element={<EntertainmentPage />} />
-              <Route path="/services/venues" element={<VenuesPage venues={venues} setVenues={setVenues} />} />
+              <Route path="/services/venues" element={<VenuesPage venues={venues} />} />
               <Route path="/services/vendor" element={<VendorPage />} />
               {user.isAdmin && <Route path="/services/admin" element={<AdminPage />} />}
-              <Route path="/plans" element={<PlanPage caterers={caterers} setCaterers={setCaterers} venues={venues} setVenues={setVenues} />} />
+              <Route path="/plans" element={<PlanPage caterers={caterers} venues={venues} />} />
             </Routes>
           </>
           :

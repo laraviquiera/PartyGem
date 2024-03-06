@@ -13,7 +13,7 @@ async function show (req, res) {
 }
 
 async function index(req, res) {
-    const venues = await Venue.find({user: req.user._id});
+    const venues = await Venue.find({});
     res.json(venues);
 };
 
