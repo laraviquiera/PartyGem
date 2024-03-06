@@ -27,7 +27,7 @@ Party Gem exclusively features vendors that are Minority-owned, Women-owned, LGB
 
 - [Click to View Project Planning](https://trello.com/b/stT7uw21/capstone-project-mern-stack-party-gem)
 
-- [Click to View Party Gem App](https://party-gem-1-9f1d68171923.herokuapp.com/about)
+- [Click to View Party Gem App](https://party-gem-1-9f1d68171923.herokuapp.com)
 
 ---
 ## Next Steps

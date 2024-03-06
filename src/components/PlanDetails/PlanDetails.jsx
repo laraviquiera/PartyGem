@@ -13,7 +13,7 @@ export default function PlanDetails({ selectedPlan, id, onDeletePlan, onUpdatePl
       setPlan(planDetail)
     }
     getPlan();
-  }, [])
+  }, []);
   
   const handleDelete = () => onDeletePlan(plan._id);
 
