@@ -13,14 +13,14 @@ export default function PlanDetails({ selectedPlan, id, onDeletePlan, onUpdatePl
       setPlan(planDetail)
     }
     getPlan();
-  }, [plan])
+  }, [])
   
   const handleDelete = () => onDeletePlan(plan._id);
 
   const handleUpdate = () => {
     setIsUpdating(true);
   };
-  
+
   const handleSave = () => {
     onUpdatePlan(plan._id, updatedPlan);
     setIsUpdating(false);
